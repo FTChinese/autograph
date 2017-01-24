@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    "public/**",
+    "test/**",
+    "client/**"
+  ],
+  "verbose": true,
+  "ext": "js json"
+}

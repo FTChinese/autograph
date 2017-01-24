@@ -23,11 +23,3 @@ fs.readFile(path.resolve(__dirname, 'datasets.json'))
   .catch(err => {
     console.log(err);
   });
-
-// got(`${baseUrl}/data/cn-floor-space-construct.csv`)
-//   .then(res => {
-//     console.log(res.headers);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });

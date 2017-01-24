@@ -1,0 +1,27 @@
+{
+  "name": "autograph",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTChinese/autograph.git"
+  },
+  "author": "weiguo.ni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FTChinese/autograph/issues"
+  },
+  "homepage": "https://github.com/FTChinese/autograph#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "co": "^4.6.0",
+    "d3": "^4.4.3",
+    "got": "^6.7.1",
+    "mz": "^2.6.0",
+    "nunjucks": "^3.0.0"
+  }
+}

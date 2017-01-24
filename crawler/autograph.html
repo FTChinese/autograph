@@ -1,0 +1,1426 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>economic data CSVs</title>
+    <style>
+    html {
+        font-family: sans-serif
+    }
+    
+    .datasets {
+        font-family: monospace;
+        margin: 20px;
+        border-spacing: 0;
+    }
+    
+    .datasets td {
+        padding: 3px 5px;
+    }
+    
+    .chart {
+        width: 260px;
+        float: left;
+        margin: 20px;
+        border-top: 1px solid black;
+    }
+    
+    .today {
+        background-color: #FF4136;
+        color: #800600;
+    }
+    
+    .today a {
+        color: #fff;
+    }
+    
+    .label {
+        border-radius: 2px;
+        padding: 3px;
+        font-size: 11px;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Economic data</h1>
+    <nav>Jump to: <a href="#datasets">CSV downloads</a> | <a href="#charts">Charts</a></nav>
+    <h2 id="datasets">CSV downloads</h2>
+    <table class="datasets">
+        <tr class="today">
+            <td><a href="data/cn-floor-space-construct.csv">cn-floor-space-construct.csv</a>&nbsp;(6kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:14 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/jp-usd-vs-yen.csv">jp-usd-vs-yen.csv</a>&nbsp;(207kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:09 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/us-10yr-treasury.csv">us-10yr-treasury.csv</a>&nbsp;(237kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:09 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/cn-yuan-vs-dollar.csv">cn-yuan-vs-dollar.csv</a>&nbsp;(173kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:08 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/cn-dollar-vs-yuan.csv">cn-dollar-vs-yuan.csv</a>&nbsp;(163kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:08 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/usdeur.csv">usdeur.csv</a>&nbsp;(188kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:08 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/jp-10yr-bond.csv">jp-10yr-bond.csv</a>&nbsp;(121kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:07 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/cn-10yr-bond.csv">cn-10yr-bond.csv</a>&nbsp;(38kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:07 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/gdpusd.csv">gdpusd.csv</a>&nbsp;(208kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:07 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/gdpeur.csv">gdpeur.csv</a>&nbsp;(82kb)</td>
+            <td>Mon, 23 Jan 2017 06:06:06 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/cn-floor-space-sold.csv">cn-floor-space-sold.csv</a>&nbsp;(9kb)</td>
+            <td>Mon, 23 Jan 2017 05:50:14 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/us-10yr-bond-and-10yr-bond.csv">us-10yr-bond-and-10yr-bond.csv</a>&nbsp;(277kb)</td>
+            <td>Mon, 23 Jan 2017 03:35:23 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/us-10yr-bond.csv">us-10yr-bond.csv</a>&nbsp;(233kb)</td>
+            <td>Mon, 23 Jan 2017 03:35:09 GMT</td>
+        </tr>
+        <tr class="today">
+            <td><a href="data/cn-interbank.csv">cn-interbank.csv</a>&nbsp;(71kb)</td>
+            <td>Mon, 23 Jan 2017 02:06:19 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/consumer-credit.csv">consumer-credit.csv</a>&nbsp;(5kb)</td>
+            <td>Sun, 22 Jan 2017 21:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/mortgage-approvals.csv">mortgage-approvals.csv</a>&nbsp;(5kb)</td>
+            <td>Sun, 22 Jan 2017 15:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-aaa-5-spot.csv">cn-aaa-5-spot.csv</a>&nbsp;(48kb)</td>
+            <td>Sun, 22 Jan 2017 09:50:12 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-sov-5-year-and-cn-aa-minus-5-spot.csv">cn-sov-5-year-and-cn-aa-minus-5-spot.csv</a>&nbsp;(57kb)</td>
+            <td>Sun, 22 Jan 2017 09:35:27 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-aa-minus-5-spot.csv">cn-aa-minus-5-spot.csv</a>&nbsp;(25kb)</td>
+            <td>Sun, 22 Jan 2017 09:35:11 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/10yr-bond.csv">10yr-bond.csv</a>&nbsp;(107kb)</td>
+            <td>Sat, 21 Jan 2017 00:35:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/fed-target-and-base-rate.csv">fed-target-and-base-rate.csv</a>&nbsp;(406kb)</td>
+            <td>Fri, 20 Jan 2017 16:50:24 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-fed-effective.csv">us-fed-effective.csv</a>&nbsp;(247kb)</td>
+            <td>Fri, 20 Jan 2017 16:50:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/base-rate.csv">base-rate.csv</a>&nbsp;(365kb)</td>
+            <td>Fri, 20 Jan 2017 16:50:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/fed-target.csv">fed-target.csv</a>&nbsp;(65kb)</td>
+            <td>Fri, 20 Jan 2017 15:35:08 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-retail-yoy.csv">uk-retail-yoy.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 20 Jan 2017 13:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/retail-sales.csv">retail-sales.csv</a>&nbsp;(5kb)</td>
+            <td>Fri, 20 Jan 2017 13:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-new-floor-space.csv">cn-new-floor-space.csv</a>&nbsp;(2kb)</td>
+            <td>Fri, 20 Jan 2017 11:35:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-nikkei-225.csv">jp-nikkei-225.csv</a>&nbsp;(171kb)</td>
+            <td>Fri, 20 Jan 2017 08:20:13 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-monthly-cash-earnings-and-jp-monthly-real-earnings.csv">jp-monthly-cash-earnings-and-jp-monthly-real-earnings.csv</a>&nbsp;(5kb)</td>
+            <td>Fri, 20 Jan 2017 05:35:26 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-monthly-real-earnings.csv">jp-monthly-real-earnings.csv</a>&nbsp;(12kb)</td>
+            <td>Fri, 20 Jan 2017 05:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-gdp-consumption-contr-and-cn-gdp-gfcf-contr-and-cn-gdp-export-cont.csv">cn-gdp-consumption-contr-and-cn-gdp-gfcf-contr-and-cn-gdp-export-cont.csv</a>&nbsp;(1kb)</td>
+            <td>Fri, 20 Jan 2017 05:20:26 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-gdp-gfcf-contr.csv">cn-gdp-gfcf-contr.csv</a>&nbsp;(0kb)</td>
+            <td>Fri, 20 Jan 2017 05:20:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-gdp-export-cont.csv">cn-gdp-export-cont.csv</a>&nbsp;(1kb)</td>
+            <td>Fri, 20 Jan 2017 05:20:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-monthly-cash-earnings.csv">jp-monthly-cash-earnings.csv</a>&nbsp;(5kb)</td>
+            <td>Fri, 20 Jan 2017 05:20:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-gdp-consumption-contr.csv">cn-gdp-consumption-contr.csv</a>&nbsp;(0kb)</td>
+            <td>Fri, 20 Jan 2017 04:35:13 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-fia-ytd-real.csv">cn-fia-ytd-real.csv</a>&nbsp;(0kb)</td>
+            <td>Fri, 20 Jan 2017 04:20:16 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-fia-ytd-and-cn-retail-yoy-and-cn-ip-yoy.csv">cn-fia-ytd-and-cn-retail-yoy-and-cn-ip-yoy.csv</a>&nbsp;(1kb)</td>
+            <td>Fri, 20 Jan 2017 02:20:26 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-ip-yoy.csv">cn-ip-yoy.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 20 Jan 2017 02:20:15 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-retail-sales.csv">cn-retail-sales.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 20 Jan 2017 02:20:13 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-real-gdp.csv">cn-real-gdp.csv</a>&nbsp;(1kb)</td>
+            <td>Fri, 20 Jan 2017 02:20:13 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-fia-ytd.csv">cn-fia-ytd.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 20 Jan 2017 02:20:13 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-retail-yoy.csv">cn-retail-yoy.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 20 Jan 2017 02:20:10 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-cash-earnings-yoy.csv">jp-cash-earnings-yoy.csv</a>&nbsp;(5kb)</td>
+            <td>Fri, 20 Jan 2017 00:50:10 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/30y-fed.csv">30y-fed.csv</a>&nbsp;(14kb)</td>
+            <td>Thu, 19 Jan 2017 23:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-consumer-confidence.csv">us-consumer-confidence.csv</a>&nbsp;(23kb)</td>
+            <td>Thu, 19 Jan 2017 19:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-cpi.csv">us-cpi.csv</a>&nbsp;(18kb)</td>
+            <td>Wed, 18 Jan 2017 18:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-core-check.csv">us-core-check.csv</a>&nbsp;(10kb)</td>
+            <td>Wed, 18 Jan 2017 18:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-av-weekly-earnings.csv">us-av-weekly-earnings.csv</a>&nbsp;(2kb)</td>
+            <td>Wed, 18 Jan 2017 18:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-reg-weekly-earnings-growth.csv">uk-reg-weekly-earnings-growth.csv</a>&nbsp;(3kb)</td>
+            <td>Wed, 18 Jan 2017 17:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/total-in-employment.csv">total-in-employment.csv</a>&nbsp;(13kb)</td>
+            <td>Wed, 18 Jan 2017 13:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/regular-weekly-earnings-growth-and-inflation-cpi.csv">regular-weekly-earnings-growth-and-inflation-cpi.csv</a>&nbsp;(3kb)</td>
+            <td>Wed, 18 Jan 2017 11:50:20 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/unemployment-rate.csv">unemployment-rate.csv</a>&nbsp;(8kb)</td>
+            <td>Wed, 18 Jan 2017 11:50:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/regular-weekly-earnings-growth.csv">regular-weekly-earnings-growth.csv</a>&nbsp;(3kb)</td>
+            <td>Wed, 18 Jan 2017 11:50:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-employment-rate.csv">uk-employment-rate.csv</a>&nbsp;(8kb)</td>
+            <td>Wed, 18 Jan 2017 11:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-consumer-confidence.csv">cn-consumer-confidence.csv</a>&nbsp;(6kb)</td>
+            <td>Wed, 18 Jan 2017 09:06:15 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/london-and-north-east-and-england-and-wales.csv">london-and-north-east-and-england-and-wales.csv</a>&nbsp;(7kb)</td>
+            <td>Tue, 17 Jan 2017 17:50:39 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/london.csv">london.csv</a>&nbsp;(8kb)</td>
+            <td>Tue, 17 Jan 2017 17:50:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/england-and-wales.csv">england-and-wales.csv</a>&nbsp;(8kb)</td>
+            <td>Tue, 17 Jan 2017 17:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/north-east.csv">north-east.csv</a>&nbsp;(8kb)</td>
+            <td>Tue, 17 Jan 2017 17:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/input-prices.csv">input-prices.csv</a>&nbsp;(4kb)</td>
+            <td>Tue, 17 Jan 2017 17:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/inflation-cpi.csv">inflation-cpi.csv</a>&nbsp;(5kb)</td>
+            <td>Tue, 17 Jan 2017 13:20:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-rpi-yoy.csv">uk-rpi-yoy.csv</a>&nbsp;(12kb)</td>
+            <td>Tue, 17 Jan 2017 09:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-retail-yoy.csv">us-retail-yoy.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 13 Jan 2017 17:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-retail-mom.csv">us-retail-mom.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 13 Jan 2017 16:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-imports-usd-and-cn-exports-usd.csv">cn-imports-usd-and-cn-exports-usd.csv</a>&nbsp;(5kb)</td>
+            <td>Fri, 13 Jan 2017 03:06:26 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-imports-usd.csv">cn-imports-usd.csv</a>&nbsp;(8kb)</td>
+            <td>Fri, 13 Jan 2017 03:06:10 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-exports-usd.csv">cn-exports-usd.csv</a>&nbsp;(8kb)</td>
+            <td>Fri, 13 Jan 2017 03:06:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-current-account.csv">jp-current-account.csv</a>&nbsp;(4kb)</td>
+            <td>Thu, 12 Jan 2017 07:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/industrial-production.csv">industrial-production.csv</a>&nbsp;(12kb)</td>
+            <td>Wed, 11 Jan 2017 16:20:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/balance-of-trade-in-goods-and-balance-of-trade-services.csv">balance-of-trade-in-goods-and-balance-of-trade-services.csv</a>&nbsp;(3kb)</td>
+            <td>Wed, 11 Jan 2017 15:20:22 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-trade-deficit.csv">uk-trade-deficit.csv</a>&nbsp;(7kb)</td>
+            <td>Wed, 11 Jan 2017 15:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/balance-of-trade-in-goods.csv">balance-of-trade-in-goods.csv</a>&nbsp;(12kb)</td>
+            <td>Wed, 11 Jan 2017 15:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/manufacturing-production.csv">manufacturing-production.csv</a>&nbsp;(12kb)</td>
+            <td>Wed, 11 Jan 2017 15:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/construction-output.csv">construction-output.csv</a>&nbsp;(1kb)</td>
+            <td>Wed, 11 Jan 2017 15:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-construction-output-mom.csv">uk-construction-output-mom.csv</a>&nbsp;(1kb)</td>
+            <td>Wed, 11 Jan 2017 12:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/balance-of-trade-services.csv">balance-of-trade-services.csv</a>&nbsp;(6kb)</td>
+            <td>Wed, 11 Jan 2017 11:35:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-bricks.csv">uk-bricks.csv</a>&nbsp;(2kb)</td>
+            <td>Wed, 11 Jan 2017 10:35:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-trade-balance-non-eu-goods.csv">uk-trade-balance-non-eu-goods.csv</a>&nbsp;(4kb)</td>
+            <td>Wed, 11 Jan 2017 10:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-industrial-prod-mom.csv">uk-industrial-prod-mom.csv</a>&nbsp;(12kb)</td>
+            <td>Wed, 11 Jan 2017 10:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/go-down.csv">go-down.csv</a>&nbsp;(2kb)</td>
+            <td>Tue, 10 Jan 2017 10:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-consumer-confidence.csv">jp-consumer-confidence.csv</a>&nbsp;(4kb)</td>
+            <td>Tue, 10 Jan 2017 10:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/go-up.csv">go-up.csv</a>&nbsp;(2kb)</td>
+            <td>Tue, 10 Jan 2017 09:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-inflation-yoy.csv">cn-inflation-yoy.csv</a>&nbsp;(6kb)</td>
+            <td>Tue, 10 Jan 2017 01:50:10 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/av-mortgage.csv">av-mortgage.csv</a>&nbsp;(4kb)</td>
+            <td>Mon, 09 Jan 2017 17:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-current-account-per-gdp.csv">cn-current-account-per-gdp.csv</a>&nbsp;(2kb)</td>
+            <td>Mon, 09 Jan 2017 07:06:15 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-reserves.csv">cn-reserves.csv</a>&nbsp;(6kb)</td>
+            <td>Sat, 07 Jan 2017 03:06:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-non-farm-change.csv">us-non-farm-change.csv</a>&nbsp;(3kb)</td>
+            <td>Fri, 06 Jan 2017 17:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-weekly-earnings.csv">us-weekly-earnings.csv</a>&nbsp;(2kb)</td>
+            <td>Fri, 06 Jan 2017 17:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-unemployment.csv">us-unemployment.csv</a>&nbsp;(3kb)</td>
+            <td>Fri, 06 Jan 2017 17:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-non-farm.csv">us-non-farm.csv</a>&nbsp;(5kb)</td>
+            <td>Fri, 06 Jan 2017 17:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-output-per-job-index.csv">uk-output-per-job-index.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 06 Jan 2017 15:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/confidenceeu.csv">confidenceeu.csv</a>&nbsp;(6kb)</td>
+            <td>Fri, 06 Jan 2017 14:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/output-per-job.csv">output-per-job.csv</a>&nbsp;(3kb)</td>
+            <td>Fri, 06 Jan 2017 14:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-output-per-hour-whole-and-uk-output-per-filled-job-whole.csv">uk-output-per-hour-whole-and-uk-output-per-filled-job-whole.csv</a>&nbsp;(2kb)</td>
+            <td>Fri, 06 Jan 2017 10:20:19 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-output-per-hour-whole.csv">uk-output-per-hour-whole.csv</a>&nbsp;(3kb)</td>
+            <td>Fri, 06 Jan 2017 10:20:10 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-output-per-filled-job-whole.csv">uk-output-per-filled-job-whole.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 06 Jan 2017 10:20:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-services-yoy.csv">uk-services-yoy.csv</a>&nbsp;(3kb)</td>
+            <td>Fri, 06 Jan 2017 03:20:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-services-pmi.csv">uk-services-pmi.csv</a>&nbsp;(1kb)</td>
+            <td>Thu, 05 Jan 2017 12:20:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-motor-sales.csv">jp-motor-sales.csv</a>&nbsp;(8kb)</td>
+            <td>Thu, 05 Jan 2017 07:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/nfc-loans.csv">nfc-loans.csv</a>&nbsp;(1kb)</td>
+            <td>Wed, 04 Jan 2017 16:50:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-construction-pmi.csv">uk-construction-pmi.csv</a>&nbsp;(1kb)</td>
+            <td>Wed, 04 Jan 2017 16:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/sme-loans.csv">sme-loans.csv</a>&nbsp;(1kb)</td>
+            <td>Wed, 04 Jan 2017 12:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/trade-weighted.csv">trade-weighted.csv</a>&nbsp;(10kb)</td>
+            <td>Tue, 03 Jan 2017 18:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-li-keqiang.csv">cn-li-keqiang.csv</a>&nbsp;(2kb)</td>
+            <td>Tue, 03 Jan 2017 14:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-li-index.csv">cn-li-index.csv</a>&nbsp;(2kb)</td>
+            <td>Tue, 03 Jan 2017 14:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-manufacturing-pmi.csv">uk-manufacturing-pmi.csv</a>&nbsp;(1kb)</td>
+            <td>Tue, 03 Jan 2017 12:50:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-shanghai-composite.csv">cn-shanghai-composite.csv</a>&nbsp;(6kb)</td>
+            <td>Tue, 03 Jan 2017 07:20:15 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-manu-pmi-and-cn-non-manu-pmi.csv">cn-manu-pmi-and-cn-non-manu-pmi.csv</a>&nbsp;(3kb)</td>
+            <td>Sun, 01 Jan 2017 01:06:28 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-manu-pmi.csv">cn-manu-pmi.csv</a>&nbsp;(2kb)</td>
+            <td>Sun, 01 Jan 2017 01:06:16 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-non-manu-pmi.csv">cn-non-manu-pmi.csv</a>&nbsp;(2kb)</td>
+            <td>Sun, 01 Jan 2017 01:06:16 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-retail-sales.csv">jp-retail-sales.csv</a>&nbsp;(7kb)</td>
+            <td>Wed, 28 Dec 2016 04:35:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/s-and-p-case-shiller-national-house-price-index.csv">s-and-p-case-shiller-national-house-price-index.csv</a>&nbsp;(9kb)</td>
+            <td>Tue, 27 Dec 2016 16:06:08 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-labour-prod-index.csv">jp-labour-prod-index.csv</a>&nbsp;(5kb)</td>
+            <td>Tue, 27 Dec 2016 09:50:10 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-unemployment-rate.csv">jp-unemployment-rate.csv</a>&nbsp;(11kb)</td>
+            <td>Tue, 27 Dec 2016 05:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-jobs-to-applicants.csv">jp-jobs-to-applicants.csv</a>&nbsp;(10kb)</td>
+            <td>Tue, 27 Dec 2016 05:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-headline-cpi.csv">jp-headline-cpi.csv</a>&nbsp;(8kb)</td>
+            <td>Tue, 27 Dec 2016 05:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-cpi-ex.csv">jp-cpi-ex.csv</a>&nbsp;(8kb)</td>
+            <td>Tue, 27 Dec 2016 05:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-house-sales.csv">us-house-sales.csv</a>&nbsp;(10kb)</td>
+            <td>Fri, 23 Dec 2016 21:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-home-sales.csv">us-home-sales.csv</a>&nbsp;(10kb)</td>
+            <td>Fri, 23 Dec 2016 21:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/gdp-per-head.csv">gdp-per-head.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 23 Dec 2016 17:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/business-investment-qoq-change.csv">business-investment-qoq-change.csv</a>&nbsp;(3kb)</td>
+            <td>Fri, 23 Dec 2016 16:35:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/index-of-services-total.csv">index-of-services-total.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 23 Dec 2016 13:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/gdp-quarterly-change.csv">gdp-quarterly-change.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 23 Dec 2016 13:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/econ-size.csv">econ-size.csv</a>&nbsp;(6kb)</td>
+            <td>Fri, 23 Dec 2016 13:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-gdp-annual-change.csv">uk-gdp-annual-change.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 23 Dec 2016 13:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/balance-of-payments.csv">balance-of-payments.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 23 Dec 2016 13:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-services-qoq.csv">uk-services-qoq.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 23 Dec 2016 13:50:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-servies-mom.csv">uk-servies-mom.csv</a>&nbsp;(4kb)</td>
+            <td>Fri, 23 Dec 2016 13:50:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-core.csv">us-core.csv</a>&nbsp;(13kb)</td>
+            <td>Thu, 22 Dec 2016 21:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-qoq-income.csv">us-qoq-income.csv</a>&nbsp;(4kb)</td>
+            <td>Thu, 22 Dec 2016 21:06:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-qoq-change.csv">us-qoq-change.csv</a>&nbsp;(1kb)</td>
+            <td>Thu, 22 Dec 2016 18:50:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-econ-size.csv">us-econ-size.csv</a>&nbsp;(2kb)</td>
+            <td>Thu, 22 Dec 2016 18:50:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/psbn-ex-rolling.csv">psbn-ex-rolling.csv</a>&nbsp;(8kb)</td>
+            <td>Wed, 21 Dec 2016 10:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-psbn-ex.csv">uk-psbn-ex.csv</a>&nbsp;(5kb)</td>
+            <td>Wed, 21 Dec 2016 10:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/corp-tax.csv">corp-tax.csv</a>&nbsp;(9kb)</td>
+            <td>Wed, 21 Dec 2016 10:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/debt-percent-gdp.csv">debt-percent-gdp.csv</a>&nbsp;(5kb)</td>
+            <td>Wed, 21 Dec 2016 10:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-borrowing-ex-banks.csv">uk-borrowing-ex-banks.csv</a>&nbsp;(4kb)</td>
+            <td>Wed, 21 Dec 2016 10:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/current-receipts.csv">current-receipts.csv</a>&nbsp;(10kb)</td>
+            <td>Wed, 21 Dec 2016 10:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/income-tax.csv">income-tax.csv</a>&nbsp;(4kb)</td>
+            <td>Wed, 21 Dec 2016 10:20:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-gdp-qoq.csv">jp-gdp-qoq.csv</a>&nbsp;(1kb)</td>
+            <td>Thu, 08 Dec 2016 07:35:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-output-per-person.csv">us-output-per-person.csv</a>&nbsp;(5kb)</td>
+            <td>Tue, 06 Dec 2016 19:50:08 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-unit-labour.csv">us-unit-labour.csv</a>&nbsp;(4kb)</td>
+            <td>Tue, 06 Dec 2016 16:06:08 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-exports-yoy-q.csv">jp-exports-yoy-q.csv</a>&nbsp;(1kb)</td>
+            <td>Mon, 14 Nov 2016 00:50:16 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-weighted-loan.csv">cn-weighted-loan.csv</a>&nbsp;(0kb)</td>
+            <td>Tue, 08 Nov 2016 12:35:11 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-output-per-hour.csv">us-output-per-hour.csv</a>&nbsp;(4kb)</td>
+            <td>Thu, 03 Nov 2016 15:06:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-bricks-quarterly.csv">uk-bricks-quarterly.csv</a>&nbsp;(1kb)</td>
+            <td>Wed, 02 Nov 2016 10:06:13 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-capital-account.csv">cn-capital-account.csv</a>&nbsp;(1kb)</td>
+            <td>Tue, 25 Oct 2016 17:06:17 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-current-account.csv">cn-current-account.csv</a>&nbsp;(1kb)</td>
+            <td>Tue, 25 Oct 2016 17:06:12 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-net-assets.csv">jp-net-assets.csv</a>&nbsp;(1kb)</td>
+            <td>Mon, 25 Jul 2016 07:35:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-ca-non-eu.csv">uk-ca-non-eu.csv</a>&nbsp;(0kb)</td>
+            <td>Tue, 12 Jul 2016 09:20:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-gdp-cap.csv">cn-gdp-cap.csv</a>&nbsp;(1kb)</td>
+            <td>Tue, 05 Jul 2016 07:50:13 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-unemployment-wb.csv">cn-unemployment-wb.csv</a>&nbsp;(0kb)</td>
+            <td>Thu, 16 Jun 2016 04:50:12 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/ons-house-prices.csv">ons-house-prices.csv</a>&nbsp;(2kb)</td>
+            <td>Tue, 17 May 2016 15:05:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-house-ex-lonon-se.csv">uk-house-ex-lonon-se.csv</a>&nbsp;(2kb)</td>
+            <td>Tue, 17 May 2016 13:35:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/uk-house-mom.csv">uk-house-mom.csv</a>&nbsp;(3kb)</td>
+            <td>Tue, 17 May 2016 10:05:06 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-average-wage.csv">cn-average-wage.csv</a>&nbsp;(2kb)</td>
+            <td>Fri, 13 May 2016 10:20:12 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-exports-yoy.csv">jp-exports-yoy.csv</a>&nbsp;(5kb)</td>
+            <td>Tue, 12 Apr 2016 10:20:12 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/income-tax-and-corp-tax.csv">income-tax-and-corp-tax.csv</a>&nbsp;(3kb)</td>
+            <td>Tue, 22 Mar 2016 13:05:29 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-aaa-5-spot-and-cn-aa-minus-5-spot.csv">cn-aaa-5-spot-and-cn-aa-minus-5-spot.csv</a>&nbsp;(53kb)</td>
+            <td>Mon, 21 Mar 2016 10:05:23 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/go-up-and-go-down.csv">go-up-and-go-down.csv</a>&nbsp;(3kb)</td>
+            <td>Tue, 08 Mar 2016 13:20:23 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-fia-ytd-real-and-cn-retail-yoy.csv">cn-fia-ytd-real-and-cn-retail-yoy.csv</a>&nbsp;(2kb)</td>
+            <td>Thu, 18 Feb 2016 16:05:43 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-capital-flow.csv">cn-capital-flow.csv</a>&nbsp;(4kb)</td>
+            <td>Thu, 18 Feb 2016 10:05:11 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-sov-5-year.csv">cn-sov-5-year.csv</a>&nbsp;(43kb)</td>
+            <td>Wed, 17 Feb 2016 10:20:14 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-consumption-and-cn-gfcf-and-cn-export-cont.csv">cn-consumption-and-cn-gfcf-and-cn-export-cont.csv</a>&nbsp;(1kb)</td>
+            <td>Fri, 29 Jan 2016 12:05:16 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-consumption.csv">cn-consumption.csv</a>&nbsp;(0kb)</td>
+            <td>Fri, 29 Jan 2016 12:05:09 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-export-cont.csv">cn-export-cont.csv</a>&nbsp;(0kb)</td>
+            <td>Fri, 29 Jan 2016 12:05:08 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-gfcf.csv">cn-gfcf.csv</a>&nbsp;(0kb)</td>
+            <td>Fri, 29 Jan 2016 12:05:08 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/public-sector-borrowing.csv">public-sector-borrowing.csv</a>&nbsp;(8kb)</td>
+            <td>Fri, 29 Jan 2016 09:35:07 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-gdp-per-worker.csv">jp-gdp-per-worker.csv</a>&nbsp;(1kb)</td>
+            <td>Tue, 26 Jan 2016 16:01:50 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/nikkei-225-markit.csv">nikkei-225-markit.csv</a>&nbsp;(2kb)</td>
+            <td>Tue, 26 Jan 2016 06:50:05 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-debt.csv">cn-debt.csv</a>&nbsp;(0kb)</td>
+            <td>Thu, 21 Jan 2016 17:43:59 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-price-expectations-up-total-and-jp-price-expectations-down-total.csv">jp-price-expectations-up-total-and-jp-price-expectations-down-total.csv</a>&nbsp;(3kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:49 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/north-east-and-england-and-wales.csv">north-east-and-england-and-wales.csv</a>&nbsp;(6kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:49 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/testing-ceic.csv">testing-ceic.csv</a>&nbsp;(2kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:43 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/cn-debt-gdp.csv">cn-debt-gdp.csv</a>&nbsp;(0kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:43 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-price-expectations-down-total.csv">jp-price-expectations-down-total.csv</a>&nbsp;(2kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:43 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/jp-price-expectations-up-total.csv">jp-price-expectations-up-total.csv</a>&nbsp;(2kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:43 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/us-gdp-per-person.csv">us-gdp-per-person.csv</a>&nbsp;(0kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:43 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/fred-test.csv">fred-test.csv</a>&nbsp;(2kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:42 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/testing-json.csv">testing-json.csv</a>&nbsp;(123kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:41 GMT</td>
+        </tr>
+        <tr class="">
+            <td><a href="data/testing-csv.csv">testing-csv.csv</a>&nbsp;(17kb)</td>
+            <td>Thu, 21 Jan 2016 14:27:41 GMT</td>
+        </tr>
+    </table>
+    <hr/>
+    <h2 id="charts">Charts</h2>
+    <div class="charts">
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/sterling-vs-euro-since-eu-referendum.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/sterling-vs-euro-since-eu-referendum.svg" download>svg</a>&nbsp;(7kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/sterling-vs-euro-since-eu-referendum.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/sterling-vs-dollar-since-eu-referendum.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/sterling-vs-dollar-since-eu-referendum.svg" download>svg</a>&nbsp;(7kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/sterling-vs-dollar-since-eu-referendum.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/floor-space-under-construction.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/floor-space-under-construction.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/floor-space-under-construction.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/yen-vs-dollar.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/yen-vs-dollar.svg" download>svg</a>&nbsp;(140kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/yen-vs-dollar.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/10-yr-government-bond-yield.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/10-yr-government-bond-yield.svg" download>svg</a>&nbsp;(109kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/10-yr-government-bond-yield.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/renminbi-vs-us-dollar.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/renminbi-vs-us-dollar.svg" download>svg</a>&nbsp;(48kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/renminbi-vs-us-dollar.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/chinese-10-year-bond-yield.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/chinese-10-year-bond-yield.svg" download>svg</a>&nbsp;(38kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/chinese-10-year-bond-yield.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/dollar-vs-euro.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/dollar-vs-euro.svg" download>svg</a>&nbsp;(48kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/dollar-vs-euro.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/10-year-treasury-yield.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/10-year-treasury-yield.svg" download>svg</a>&nbsp;(49kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/10-year-treasury-yield.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/sterling-vs-euro.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/sterling-vs-euro.svg" download>svg</a>&nbsp;(49kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/sterling-vs-euro.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/sterling-vs-dollar.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 06:06:48 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/sterling-vs-dollar.svg" download>svg</a>&nbsp;(48kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/sterling-vs-dollar.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/floor-space-sold.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 05:50:46 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/floor-space-sold.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/floor-space-sold.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-10yr-bond-10yr-bond.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 03:35:43 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/us-10yr-bond-10yr-bond.svg" download>svg</a>&nbsp;(298kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-10yr-bond-10yr-bond.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-7-day-repo-rate.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 02:06:47 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/china-s-7-day-repo-rate.svg" download>svg</a>&nbsp;(47kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-7-day-repo-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/sterling-vs-euro-ytd.svg" width="100%"></object>
+            <p><small>Mon, 23 Jan 2017 00:35:43 GMT</small> <span class="label today">Today</span></p>
+            <p><a href="graphics/sterling-vs-euro-ytd.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/sterling-vs-euro-ytd.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/consumer-credit-ex-student-loans.svg" width="100%"></object>
+            <p><small>Sun, 22 Jan 2017 21:35:44 GMT</small></p>
+            <p><a href="graphics/consumer-credit-ex-student-loans.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/consumer-credit-ex-student-loans.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/monthly-mortgage-approvals.svg" width="100%"></object>
+            <p><small>Sun, 22 Jan 2017 15:06:43 GMT</small></p>
+            <p><a href="graphics/monthly-mortgage-approvals.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/monthly-mortgage-approvals.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-bond-yields-and-spread.svg" width="100%"></object>
+            <p><small>Sun, 22 Jan 2017 09:35:44 GMT</small></p>
+            <p><a href="graphics/china-bond-yields-and-spread.svg" download>svg</a>&nbsp;(60kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-bond-yields-and-spread.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-10-year-government-bond-yield.svg" width="100%"></object>
+            <p><small>Sat, 21 Jan 2017 00:35:42 GMT</small></p>
+            <p><a href="graphics/uk-10-year-government-bond-yield.svg" download>svg</a>&nbsp;(48kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-10-year-government-bond-yield.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-10-year-gilt-yield-june-2016.svg" width="100%"></object>
+            <p><small>Sat, 21 Jan 2017 00:06:46 GMT</small></p>
+            <p><a href="graphics/uk-10-year-gilt-yield-june-2016.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-10-year-gilt-yield-june-2016.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/boe-vs-fed-interest-rates.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 16:50:44 GMT</small></p>
+            <p><a href="graphics/boe-vs-fed-interest-rates.svg" download>svg</a>&nbsp;(454kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/boe-vs-fed-interest-rates.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/federal-funds-effective-interest-rate.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 16:50:44 GMT</small></p>
+            <p><a href="graphics/federal-funds-effective-interest-rate.svg" download>svg</a>&nbsp;(48kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/federal-funds-effective-interest-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/bank-of-england-base-rate.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 16:50:44 GMT</small></p>
+            <p><a href="graphics/bank-of-england-base-rate.svg" download>svg</a>&nbsp;(65kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/bank-of-england-base-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/federal-funds-target-rate.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 15:35:46 GMT</small></p>
+            <p><a href="graphics/federal-funds-target-rate.svg" download>svg</a>&nbsp;(49kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/federal-funds-target-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/retail-sales-volumes.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 13:35:44 GMT</small></p>
+            <p><a href="graphics/retail-sales-volumes.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/retail-sales-volumes.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/new-floor-space-of-newly-started-houses.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 11:35:42 GMT</small></p>
+            <p><a href="graphics/new-floor-space-of-newly-started-houses.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/new-floor-space-of-newly-started-houses.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/nikkei-225.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 08:20:44 GMT</small></p>
+            <p><a href="graphics/nikkei-225.svg" download>svg</a>&nbsp;(131kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/nikkei-225.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/wage-growth-in-japan.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 05:35:43 GMT</small></p>
+            <p><a href="graphics/wage-growth-in-japan.svg" download>svg</a>&nbsp;(9kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/wage-growth-in-japan.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/sources-of-china-s-growth.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 05:20:44 GMT</small></p>
+            <p><a href="graphics/sources-of-china-s-growth.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/sources-of-china-s-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-activity-indicators.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 02:20:44 GMT</small></p>
+            <p><a href="graphics/china-s-activity-indicators.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-activity-indicators.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-real-gdp-growth.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 02:20:44 GMT</small></p>
+            <p><a href="graphics/china-s-real-gdp-growth.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-real-gdp-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/retail-sales-in-china.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 02:20:44 GMT</small></p>
+            <p><a href="graphics/retail-sales-in-china.svg" download>svg</a>&nbsp;(7kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/retail-sales-in-china.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/earning-growth-in-japan.svg" width="100%"></object>
+            <p><small>Fri, 20 Jan 2017 00:50:44 GMT</small></p>
+            <p><a href="graphics/earning-growth-in-japan.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/earning-growth-in-japan.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/30-yr-fixed-mortgage-rate.svg" width="100%"></object>
+            <p><small>Thu, 19 Jan 2017 23:06:45 GMT</small></p>
+            <p><a href="graphics/30-yr-fixed-mortgage-rate.svg" download>svg</a>&nbsp;(13kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/30-yr-fixed-mortgage-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-consumer-comfort-index.svg" width="100%"></object>
+            <p><small>Thu, 19 Jan 2017 19:06:45 GMT</small></p>
+            <p><a href="graphics/us-consumer-comfort-index.svg" download>svg</a>&nbsp;(12kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-consumer-comfort-index.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-core-inflation.svg" width="100%"></object>
+            <p><small>Wed, 18 Jan 2017 18:06:47 GMT</small></p>
+            <p><a href="graphics/us-core-inflation.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-core-inflation.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-consumer-inflation.svg" width="100%"></object>
+            <p><small>Wed, 18 Jan 2017 18:06:47 GMT</small></p>
+            <p><a href="graphics/us-consumer-inflation.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-consumer-inflation.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-average-earnings-growth.svg" width="100%"></object>
+            <p><small>Wed, 18 Jan 2017 18:06:47 GMT</small></p>
+            <p><a href="graphics/us-average-earnings-growth.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-average-earnings-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/numbers-in-employment.svg" width="100%"></object>
+            <p><small>Wed, 18 Jan 2017 13:50:46 GMT</small></p>
+            <p><a href="graphics/numbers-in-employment.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/numbers-in-employment.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/unemployment-rate.svg" width="100%"></object>
+            <p><small>Wed, 18 Jan 2017 11:50:45 GMT</small></p>
+            <p><a href="graphics/unemployment-rate.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/unemployment-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/real-earnings-growth.svg" width="100%"></object>
+            <p><small>Wed, 18 Jan 2017 11:50:45 GMT</small></p>
+            <p><a href="graphics/real-earnings-growth.svg" download>svg</a>&nbsp;(8kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/real-earnings-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/consumer-confidence-in-china.svg" width="100%"></object>
+            <p><small>Wed, 18 Jan 2017 09:06:45 GMT</small></p>
+            <p><a href="graphics/consumer-confidence-in-china.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/consumer-confidence-in-china.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/regional-average-house-prices.svg" width="100%"></object>
+            <p><small>Tue, 17 Jan 2017 17:51:01 GMT</small></p>
+            <p><a href="graphics/regional-average-house-prices.svg" download>svg</a>&nbsp;(11kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/regional-average-house-prices.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/input-prices-materials-and-fuel.svg" width="100%"></object>
+            <p><small>Tue, 17 Jan 2017 17:20:48 GMT</small></p>
+            <p><a href="graphics/input-prices-materials-and-fuel.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/input-prices-materials-and-fuel.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/cpi-inflation.svg" width="100%"></object>
+            <p><small>Tue, 17 Jan 2017 13:20:45 GMT</small></p>
+            <p><a href="graphics/cpi-inflation.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/cpi-inflation.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-retail-sales.svg" width="100%"></object>
+            <p><small>Fri, 13 Jan 2017 17:35:53 GMT</small></p>
+            <p><a href="graphics/us-retail-sales.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-retail-sales.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-trade-balance.svg" width="100%"></object>
+            <p><small>Fri, 13 Jan 2017 03:06:43 GMT</small></p>
+            <p><a href="graphics/china-s-trade-balance.svg" download>svg</a>&nbsp;(8kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-trade-balance.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-s-current-account-balance.svg" width="100%"></object>
+            <p><small>Thu, 12 Jan 2017 07:20:44 GMT</small></p>
+            <p><a href="graphics/japan-s-current-account-balance.svg" download>svg</a>&nbsp;(7kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-s-current-account-balance.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/production-output.svg" width="100%"></object>
+            <p><small>Wed, 11 Jan 2017 16:20:44 GMT</small></p>
+            <p><a href="graphics/production-output.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/production-output.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/balance-of-trade.svg" width="100%"></object>
+            <p><small>Wed, 11 Jan 2017 15:20:45 GMT</small></p>
+            <p><a href="graphics/balance-of-trade.svg" download>svg</a>&nbsp;(9kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/balance-of-trade.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/construction-output.svg" width="100%"></object>
+            <p><small>Wed, 11 Jan 2017 15:06:45 GMT</small></p>
+            <p><a href="graphics/construction-output.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/construction-output.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/manufacturing-output.svg" width="100%"></object>
+            <p><small>Wed, 11 Jan 2017 15:06:45 GMT</small></p>
+            <p><a href="graphics/manufacturing-output.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/manufacturing-output.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/brick-deliveries.svg" width="100%"></object>
+            <p><small>Wed, 11 Jan 2017 10:35:44 GMT</small></p>
+            <p><a href="graphics/brick-deliveries.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/brick-deliveries.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-consumer-confidence.svg" width="100%"></object>
+            <p><small>Tue, 10 Jan 2017 10:35:45 GMT</small></p>
+            <p><a href="graphics/japan-consumer-confidence.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-consumer-confidence.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/chinese-inflation.svg" width="100%"></object>
+            <p><small>Tue, 10 Jan 2017 01:50:45 GMT</small></p>
+            <p><a href="graphics/chinese-inflation.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/chinese-inflation.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/average-quoted-mortgage-rate.svg" width="100%"></object>
+            <p><small>Mon, 09 Jan 2017 17:20:44 GMT</small></p>
+            <p><a href="graphics/average-quoted-mortgage-rate.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/average-quoted-mortgage-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-current-account-balance.svg" width="100%"></object>
+            <p><small>Mon, 09 Jan 2017 07:06:44 GMT</small></p>
+            <p><a href="graphics/china-s-current-account-balance.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-current-account-balance.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/chinese-reserves.svg" width="100%"></object>
+            <p><small>Sat, 07 Jan 2017 03:06:44 GMT</small></p>
+            <p><a href="graphics/chinese-reserves.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/chinese-reserves.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-average-weekly-earnings-growth.svg" width="100%"></object>
+            <p><small>Fri, 06 Jan 2017 17:35:44 GMT</small></p>
+            <p><a href="graphics/us-average-weekly-earnings-growth.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-average-weekly-earnings-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-unemployment-rate.svg" width="100%"></object>
+            <p><small>Fri, 06 Jan 2017 17:35:44 GMT</small></p>
+            <p><a href="graphics/us-unemployment-rate.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-unemployment-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/people-in-employment.svg" width="100%"></object>
+            <p><small>Fri, 06 Jan 2017 17:35:44 GMT</small></p>
+            <p><a href="graphics/people-in-employment.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/people-in-employment.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-consumer-confidence.svg" width="100%"></object>
+            <p><small>Fri, 06 Jan 2017 14:06:45 GMT</small></p>
+            <p><a href="graphics/uk-consumer-confidence.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-consumer-confidence.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/output-per-job.svg" width="100%"></object>
+            <p><small>Fri, 06 Jan 2017 14:06:45 GMT</small></p>
+            <p><a href="graphics/output-per-job.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/output-per-job.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/whole-economy-productivity.svg" width="100%"></object>
+            <p><small>Fri, 06 Jan 2017 10:20:45 GMT</small></p>
+            <p><a href="graphics/whole-economy-productivity.svg" download>svg</a>&nbsp;(7kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/whole-economy-productivity.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/services-activity.svg" width="100%"></object>
+            <p><small>Thu, 05 Jan 2017 12:20:46 GMT</small></p>
+            <p><a href="graphics/services-activity.svg" download>svg</a>&nbsp;(3kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/services-activity.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-motor-vehicle-sales.svg" width="100%"></object>
+            <p><small>Thu, 05 Jan 2017 07:35:44 GMT</small></p>
+            <p><a href="graphics/japan-motor-vehicle-sales.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-motor-vehicle-sales.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/lending-to-non-financial-companies.svg" width="100%"></object>
+            <p><small>Wed, 04 Jan 2017 16:50:47 GMT</small></p>
+            <p><a href="graphics/lending-to-non-financial-companies.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/lending-to-non-financial-companies.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/construction-activity.svg" width="100%"></object>
+            <p><small>Wed, 04 Jan 2017 16:20:48 GMT</small></p>
+            <p><a href="graphics/construction-activity.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/construction-activity.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/lending-to-non-financial-smes.svg" width="100%"></object>
+            <p><small>Wed, 04 Jan 2017 12:06:45 GMT</small></p>
+            <p><a href="graphics/lending-to-non-financial-smes.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/lending-to-non-financial-smes.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/trade-weighted-value-of-the-dollar.svg" width="100%"></object>
+            <p><small>Tue, 03 Jan 2017 18:07:43 GMT</small></p>
+            <p><a href="graphics/trade-weighted-value-of-the-dollar.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/trade-weighted-value-of-the-dollar.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/li-keqiang-index.svg" width="100%"></object>
+            <p><small>Tue, 03 Jan 2017 14:06:46 GMT</small></p>
+            <p><a href="graphics/li-keqiang-index.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/li-keqiang-index.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/manufacturing-activity.svg" width="100%"></object>
+            <p><small>Tue, 03 Jan 2017 12:50:46 GMT</small></p>
+            <p><a href="graphics/manufacturing-activity.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/manufacturing-activity.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/shanghai-composite-index.svg" width="100%"></object>
+            <p><small>Tue, 03 Jan 2017 07:20:46 GMT</small></p>
+            <p><a href="graphics/shanghai-composite-index.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/shanghai-composite-index.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-official-pmis.svg" width="100%"></object>
+            <p><small>Sun, 01 Jan 2017 01:06:45 GMT</small></p>
+            <p><a href="graphics/china-s-official-pmis.svg" download>svg</a>&nbsp;(8kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-official-pmis.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-retail-sales.svg" width="100%"></object>
+            <p><small>Wed, 28 Dec 2016 04:35:44 GMT</small></p>
+            <p><a href="graphics/japan-retail-sales.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-retail-sales.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/s-and-p-case-shiller-national-house-price-index.svg" width="100%"></object>
+            <p><small>Tue, 27 Dec 2016 16:06:45 GMT</small></p>
+            <p><a href="graphics/s-and-p-case-shiller-national-house-price-index.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/s-and-p-case-shiller-national-house-price-index.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-s-labour-productivity.svg" width="100%"></object>
+            <p><small>Tue, 27 Dec 2016 09:50:43 GMT</small></p>
+            <p><a href="graphics/japan-s-labour-productivity.svg" download>svg</a>&nbsp;(8kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-s-labour-productivity.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-core-inflation-rate.svg" width="100%"></object>
+            <p><small>Tue, 27 Dec 2016 05:20:44 GMT</small></p>
+            <p><a href="graphics/japan-core-inflation-rate.svg" download>svg</a>&nbsp;(10kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-core-inflation-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-headline-inflation.svg" width="100%"></object>
+            <p><small>Tue, 27 Dec 2016 05:20:44 GMT</small></p>
+            <p><a href="graphics/japan-headline-inflation.svg" download>svg</a>&nbsp;(9kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-headline-inflation.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-unemployment-rate.svg" width="100%"></object>
+            <p><small>Tue, 27 Dec 2016 05:20:44 GMT</small></p>
+            <p><a href="graphics/japan-unemployment-rate.svg" download>svg</a>&nbsp;(10kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-unemployment-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-jobs-to-applicants-ratio.svg" width="100%"></object>
+            <p><small>Tue, 27 Dec 2016 05:20:44 GMT</small></p>
+            <p><a href="graphics/japan-jobs-to-applicants-ratio.svg" download>svg</a>&nbsp;(10kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-jobs-to-applicants-ratio.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/sales-of-new-one-family-homes.svg" width="100%"></object>
+            <p><small>Fri, 23 Dec 2016 21:50:43 GMT</small></p>
+            <p><a href="graphics/sales-of-new-one-family-homes.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/sales-of-new-one-family-homes.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/gdp-per-head.svg" width="100%"></object>
+            <p><small>Fri, 23 Dec 2016 17:20:43 GMT</small></p>
+            <p><a href="graphics/gdp-per-head.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/gdp-per-head.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/business-investment.svg" width="100%"></object>
+            <p><small>Fri, 23 Dec 2016 16:35:43 GMT</small></p>
+            <p><a href="graphics/business-investment.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/business-investment.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/current-account-balance.svg" width="100%"></object>
+            <p><small>Fri, 23 Dec 2016 13:50:44 GMT</small></p>
+            <p><a href="graphics/current-account-balance.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/current-account-balance.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/index-of-services.svg" width="100%"></object>
+            <p><small>Fri, 23 Dec 2016 13:50:44 GMT</small></p>
+            <p><a href="graphics/index-of-services.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/index-of-services.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/the-size-of-the-uk-economy.svg" width="100%"></object>
+            <p><small>Fri, 23 Dec 2016 13:50:44 GMT</small></p>
+            <p><a href="graphics/the-size-of-the-uk-economy.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/the-size-of-the-uk-economy.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-gdp-growth.svg" width="100%"></object>
+            <p><small>Fri, 23 Dec 2016 13:50:44 GMT</small></p>
+            <p><a href="graphics/uk-gdp-growth.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-gdp-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-consumer-income-growth.svg" width="100%"></object>
+            <p><small>Thu, 22 Dec 2016 21:06:44 GMT</small></p>
+            <p><a href="graphics/us-consumer-income-growth.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-consumer-income-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/personal-consumption-expenditures.svg" width="100%"></object>
+            <p><small>Thu, 22 Dec 2016 21:06:44 GMT</small></p>
+            <p><a href="graphics/personal-consumption-expenditures.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/personal-consumption-expenditures.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/the-size-of-the-us-economy.svg" width="100%"></object>
+            <p><small>Thu, 22 Dec 2016 18:50:42 GMT</small></p>
+            <p><a href="graphics/the-size-of-the-us-economy.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/the-size-of-the-us-economy.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-gdp-growth.svg" width="100%"></object>
+            <p><small>Thu, 22 Dec 2016 18:50:42 GMT</small></p>
+            <p><a href="graphics/us-gdp-growth.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-gdp-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-government-receipts.svg" width="100%"></object>
+            <p><small>Wed, 21 Dec 2016 10:20:44 GMT</small></p>
+            <p><a href="graphics/uk-government-receipts.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-government-receipts.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-government-debt.svg" width="100%"></object>
+            <p><small>Wed, 21 Dec 2016 10:20:44 GMT</small></p>
+            <p><a href="graphics/uk-government-debt.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-government-debt.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/public-sector-net-borrowing.svg" width="100%"></object>
+            <p><small>Wed, 21 Dec 2016 10:20:44 GMT</small></p>
+            <p><a href="graphics/public-sector-net-borrowing.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/public-sector-net-borrowing.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-gdp-growth.svg" width="100%"></object>
+            <p><small>Thu, 08 Dec 2016 07:36:33 GMT</small></p>
+            <p><a href="graphics/japan-gdp-growth.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-gdp-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-productivity.svg" width="100%"></object>
+            <p><small>Tue, 06 Dec 2016 19:51:39 GMT</small></p>
+            <p><a href="graphics/us-productivity.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-productivity.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/unit-labour-costs.svg" width="100%"></object>
+            <p><small>Tue, 06 Dec 2016 16:07:32 GMT</small></p>
+            <p><a href="graphics/unit-labour-costs.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/unit-labour-costs.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-s-export-growth.svg" width="100%"></object>
+            <p><small>Mon, 14 Nov 2016 00:50:49 GMT</small></p>
+            <p><a href="graphics/japan-s-export-growth.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-s-export-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/weighted-average-bank-loan-rate.svg" width="100%"></object>
+            <p><small>Tue, 08 Nov 2016 12:35:54 GMT</small></p>
+            <p><a href="graphics/weighted-average-bank-loan-rate.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/weighted-average-bank-loan-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/output-per-hour.svg" width="100%"></object>
+            <p><small>Thu, 03 Nov 2016 15:06:52 GMT</small></p>
+            <p><a href="graphics/output-per-hour.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/output-per-hour.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-brick-deliveries.svg" width="100%"></object>
+            <p><small>Wed, 02 Nov 2016 10:06:51 GMT</small></p>
+            <p><a href="graphics/uk-brick-deliveries.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-brick-deliveries.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-capital-account-balance.svg" width="100%"></object>
+            <p><small>Tue, 25 Oct 2016 17:06:52 GMT</small></p>
+            <p><a href="graphics/china-s-capital-account-balance.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-capital-account-balance.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-s-external-assets.svg" width="100%"></object>
+            <p><small>Mon, 25 Jul 2016 07:35:45 GMT</small></p>
+            <p><a href="graphics/japan-s-external-assets.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-s-external-assets.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/uk-current-account-balance-by-region.svg" width="100%"></object>
+            <p><small>Tue, 12 Jul 2016 00:06:47 GMT</small></p>
+            <p><a href="graphics/uk-current-account-balance-by-region.svg" download>svg</a>&nbsp;(1kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/uk-current-account-balance-by-region.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/gdp-per-capita.svg" width="100%"></object>
+            <p><small>Tue, 05 Jul 2016 07:50:47 GMT</small></p>
+            <p><a href="graphics/gdp-per-capita.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/gdp-per-capita.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-unemployment-rate.svg" width="100%"></object>
+            <p><small>Thu, 16 Jun 2016 04:50:45 GMT</small></p>
+            <p><a href="graphics/china-s-unemployment-rate.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-unemployment-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/house-prices.svg" width="100%"></object>
+            <p><small>Tue, 17 May 2016 15:05:42 GMT</small></p>
+            <p><a href="graphics/house-prices.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/house-prices.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-average-annual-wages.svg" width="100%"></object>
+            <p><small>Fri, 13 May 2016 10:20:42 GMT</small></p>
+            <p><a href="graphics/china-s-average-annual-wages.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-average-annual-wages.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/shaghai-composite-index.svg" width="100%"></object>
+            <p><small>Fri, 29 Apr 2016 07:35:41 GMT</small></p>
+            <p><a href="graphics/shaghai-composite-index.svg" download>svg</a>&nbsp;(6kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/shaghai-composite-index.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-s-exports.svg" width="100%"></object>
+            <p><small>Tue, 12 Apr 2016 10:35:39 GMT</small></p>
+            <p><a href="graphics/japan-s-exports.svg" download>svg</a>&nbsp;(7kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-s-exports.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-bond-yields-and-spreads.svg" width="100%"></object>
+            <p><small>Thu, 24 Mar 2016 11:20:38 GMT</small></p>
+            <p><a href="graphics/china-bond-yields-and-spreads.svg" download>svg</a>&nbsp;(57kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-bond-yields-and-spreads.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/bond-yields-and-spreads.svg" width="100%"></object>
+            <p><small>Thu, 24 Mar 2016 10:20:37 GMT</small></p>
+            <p><a href="graphics/bond-yields-and-spreads.svg" download>svg</a>&nbsp;(57kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/bond-yields-and-spreads.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/bond-yields.svg" width="100%"></object>
+            <p><small>Thu, 24 Mar 2016 09:35:40 GMT</small></p>
+            <p><a href="graphics/bond-yields.svg" download>svg</a>&nbsp;(57kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/bond-yields.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/tax-revenues.svg" width="100%"></object>
+            <p><small>Tue, 22 Mar 2016 13:05:46 GMT</small></p>
+            <p><a href="graphics/tax-revenues.svg" download>svg</a>&nbsp;(8kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/tax-revenues.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/corporate-bond-yields.svg" width="100%"></object>
+            <p><small>Mon, 21 Mar 2016 10:05:38 GMT</small></p>
+            <p><a href="graphics/corporate-bond-yields.svg" download>svg</a>&nbsp;(57kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/corporate-bond-yields.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-inflation-expectations.svg" width="100%"></object>
+            <p><small>Tue, 08 Mar 2016 13:20:38 GMT</small></p>
+            <p><a href="graphics/japan-inflation-expectations.svg" download>svg</a>&nbsp;(9kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-inflation-expectations.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/gdp-per-capita-growth.svg" width="100%"></object>
+            <p><small>Thu, 03 Mar 2016 17:50:58 GMT</small></p>
+            <p><a href="graphics/gdp-per-capita-growth.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/gdp-per-capita-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/weighted-average-bank-loan-rate-in-china.svg" width="100%"></object>
+            <p><small>Thu, 18 Feb 2016 15:35:36 GMT</small></p>
+            <p><a href="graphics/weighted-average-bank-loan-rate-in-china.svg" download>svg</a>&nbsp;(3kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/weighted-average-bank-loan-rate-in-china.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/real-gdp-growth.svg" width="100%"></object>
+            <p><small>Thu, 18 Feb 2016 15:35:36 GMT</small></p>
+            <p><a href="graphics/real-gdp-growth.svg" download>svg</a>&nbsp;(5kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/real-gdp-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-seven-day-repo-rate.svg" width="100%"></object>
+            <p><small>Thu, 18 Feb 2016 01:51:00 GMT</small></p>
+            <p><a href="graphics/china-s-seven-day-repo-rate.svg" download>svg</a>&nbsp;(43kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-seven-day-repo-rate.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-average-annual-wage.svg" width="100%"></object>
+            <p><small>Wed, 17 Feb 2016 11:35:58 GMT</small></p>
+            <p><a href="graphics/china-s-average-annual-wage.svg" download>svg</a>&nbsp;(4kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-average-annual-wage.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-5-yr-treasury.svg" width="100%"></object>
+            <p><small>Wed, 17 Feb 2016 10:20:37 GMT</small></p>
+            <p><a href="graphics/china-s-5-yr-treasury.svg" download>svg</a>&nbsp;(39kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-5-yr-treasury.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/weighted-average-loan-rate-in-china.svg" width="100%"></object>
+            <p><small>Tue, 09 Feb 2016 17:35:33 GMT</small></p>
+            <p><a href="graphics/weighted-average-loan-rate-in-china.svg" download>svg</a>&nbsp;(3kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/weighted-average-loan-rate-in-china.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-earnings-growth.svg" width="100%"></object>
+            <p><small>Mon, 08 Feb 2016 07:50:56 GMT</small></p>
+            <p><a href="graphics/japan-earnings-growth.svg" download>svg</a>&nbsp;(12kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-earnings-growth.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japan-gdp-per-employed-person.svg" width="100%"></object>
+            <p><small>Wed, 03 Feb 2016 15:20:59 GMT</small></p>
+            <p><a href="graphics/japan-gdp-per-employed-person.svg" download>svg</a>&nbsp;(3kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japan-gdp-per-employed-person.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/china-s-debt-to-gdp-ratio.svg" width="100%"></object>
+            <p><small>Wed, 03 Feb 2016 15:05:27 GMT</small></p>
+            <p><a href="graphics/china-s-debt-to-gdp-ratio.svg" download>svg</a>&nbsp;(3kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/china-s-debt-to-gdp-ratio.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/us-gdp-per-person.svg" width="100%"></object>
+            <p><small>Wed, 03 Feb 2016 15:05:27 GMT</small></p>
+            <p><a href="graphics/us-gdp-per-person.svg" download>svg</a>&nbsp;(3kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/us-gdp-per-person.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+        <div class="chart">
+            <object type="image/svg+xml" data="graphics/japanese-households-inflation-expectations.svg" width="100%"></object>
+            <p><small>Mon, 25 Jan 2016 11:15:22 GMT</small></p>
+            <p><a href="graphics/japanese-households-inflation-expectations.svg" download>svg</a>&nbsp;(13kb) | <a href="https://image.webservices.ft.com/v1/images/raw/https://ig.ft.com/autograph//graphics/japanese-households-inflation-expectations.svg?width=400&source=ig_autograph" download>png</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

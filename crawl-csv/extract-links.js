@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const fs = require('mz/fs');
 
-function extractData(html) {
+function extractLinks(html) {
   const $ = cheerio.load(html);
   const rowEls = $('table.datasets').children('tr');
   return rowEls.map((index, element) => {
@@ -10,8 +10,9 @@ function extractData(html) {
     const lastModified = tdEls.eq(1).text();
     return {
       "name": csvName,
-      "lastModified": ""
+      "lastModified": lastModified
     }
+    return csvName;
   }).get();
 }
 
@@ -26,4 +27,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = extractData;
+module.exports = extractLinks;

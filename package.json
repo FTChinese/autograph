@@ -29,6 +29,7 @@
     "koa-static": "^2.0.0",
     "lodash": "^4.17.4",
     "nedb": "^1.8.0",
+    "node-fetch": "^1.6.3",
     "nunjucks": "^3.0.0",
     "speakingurl": "^11.0.0"
   }

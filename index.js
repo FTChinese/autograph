@@ -1,8 +1,5 @@
-const fs = require('fs-jetpack');
-const jsdom = require('jsdom');
-const d3 = require('d3');
+const crawlCsv = require('./crawl-csv');
+const drawCharts = require('./draw-charts');
 
-jsdom.env({
-  html: '<html><body></body></html>',
-  features: { QuerySelector: true },
-})
+crawlCsv();
+drawCharts();

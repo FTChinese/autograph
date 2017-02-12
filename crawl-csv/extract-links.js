@@ -1,5 +1,5 @@
 const cheerio = require('cheerio');
-const fs = require('mz/fs');
+const fs = require('fs-jetpack');
 
 function extractLinks(html) {
   const $ = cheerio.load(html);
@@ -17,7 +17,7 @@ function extractLinks(html) {
 }
 
 if (require.main === module) {
-  fs.readFile('autograph.html')
+  fs.readAsync('autograph.html')
     .then(content => {
       const datasets = extractData(content)
       return fs.writeFile('datasets.json', JSON.stringify(datasets, null, 4));

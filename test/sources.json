@@ -1,0 +1,44 @@
+[
+  {
+		"type": "line",
+		"updated": "26 Jan 2017",
+		"title": "UK GDP growth",
+		"subtitle": "% change previous quarter",
+		"source": "ONS/Bloomberg",
+		"highlightvalue": 0,
+		"x": {
+			"series": "date"
+		},
+		"y": {
+			"series": [
+				{
+					"key": "GDP quarterly change",
+					"label": "GDP quarterly change"
+				}
+			]
+		}
+  },
+  {
+    "type": "line",
+    "updated": "10 Feb 2017",
+    "title": "China bond yields and spread",
+    "subtitle": "Spot rate, %",
+    "source": "CEIC/China Central Depositary",
+    "highlightvalue": 0,
+    "x": {
+        "series": "date"
+    },
+    "y": {
+        "series": [
+            {
+                "key": "CN sov 5 year",
+                "label": "5-yr treasury"
+            },
+            {
+                "key": "CN AA minus 5 spot",
+                "label": "AA- rated"
+            }
+        ]
+    }
+  }
+]

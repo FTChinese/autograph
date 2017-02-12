@@ -36,17 +36,17 @@ function chartRender(data) {
       svg.append('text')
           .classed('chart-title', true)
           .attr('y', 22)
-          .text(data.title);
+          .text(data.title.cn ? data.title.cn : data.title.en);
 
       svg.append('text')
           .attr('class', 'chart-subtitle')
           .attr('y', 42)
-          .text(data.subtitle);
+          .text(data.subtitle.cn ? data.subtitle.cn : data.title.en);
 
       svg.append('text')
           .attr('class', 'chart-source')
           .attr('y', chartHeight - 5)
-          .text('来源: ' + data.source + '. ' + data.updated);
+          .text(`来源: ${data.source.cn ? data.source.cn : data.source.en}. ${data.updated}`);
 
 // line's container
       const container = svg.append('g')

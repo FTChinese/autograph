@@ -1,6 +1,7 @@
 const jsdom = require('jsdom');
 const d3 = require('d3');
 const _ = require('lodash');
+const translate = require('./translate.js');
 const SVGStyles = require('./svg-styles.js');
 const cssLink = '<?xml-stylesheet type="text/css" href="https://ig.ft.com/graphics/bloomberg-economics/chart-style.css" ?>';
 
@@ -20,7 +21,7 @@ const plotHeight = chartHeight - margin.top - margin.bottom;
 const keyLineLength = 25;
 const keyElementHeight = 20;
 
-function chartRender(data) {
+function draw(data) {
   return new Promise(function(resolve, reject) {
     jsdom.env("<html><body></body></html>", function(err, window) {
       if (err) reject(err);
@@ -36,17 +37,17 @@ function chartRender(data) {
       svg.append('text')
           .classed('chart-title', true)
           .attr('y', 22)
-          .text(data.title.cn ? data.title.cn : data.title.en);
+          .text(translate(data.title));
 
       svg.append('text')
           .attr('class', 'chart-subtitle')
           .attr('y', 42)
-          .text(data.subtitle.cn ? data.subtitle.cn : data.title.en);
+          .text(translate(data.subtitle));
 
       svg.append('text')
           .attr('class', 'chart-source')
           .attr('y', chartHeight - 5)
-          .text(`来源: ${data.source.cn ? data.source.cn : data.source.en}. ${data.updated}`);
+          .text(`来源: ${translate(data.source)}. ${data.updated}`);
 
 // line's container
       const container = svg.append('g')
@@ -130,7 +131,7 @@ function chartRender(data) {
         keyElements.append('text')
             .attr('x', keyLineLength + 3)
             .attr('font-size', SVGStyles.keyTextSize)
-            .text(d => d.label);
+            .text(d => (translate(d.label)));
 
         keyElements.append('line')
             .attr('x1', 0)
@@ -166,4 +167,4 @@ function chartRender(data) {
   });  
 }
 
-module.exports = chartRender;
+module.exports = draw;

@@ -23,15 +23,18 @@
 <h2 id="charts">图表</h2>
 <div class="charts">
     {% for chart in charts %}
-    <object data="graphics/{{chart.name}}" type="image/svg+xml"></object>
-    <p>
-        <small>{{chart.lastModified}}</small>
-        {% if chart.isToday %}<span class="label today">Today</span>{% endif %}
-    </p>
-    <p>
-        <a href="graphics/{{chart.name}}" download>svg ({{chart.size}})</a> | 
-        <a href="" download>png</a>
-    </p>
+    <div class="chart">
+        <object data="graphics/{{chart.name}}" type="image/svg+xml"></object>
+        <p>
+            <small>{{chart.lastModified}}</small>
+            {% if chart.isToday %}<span class="label today">Today</span>{% endif %}
+        </p>
+        <p>
+            <a href="graphics/{{chart.name}}" download>svg ({{chart.size}})</a> | 
+            <a href="" download>png</a>
+        </p>
+    </div>
+
     {% endfor %}
 </div>
 {% endblock %}

@@ -9,7 +9,10 @@ const loadJsonFile = require('load-json-file');
 // const bodyParser = require('koa-bodyparser');
 // const index = require('./server/index.js');
 const render = require('./util/render.js');
-const buildArtifacts = require('./util/build-artifacts.js')
+const buildArtifacts = require('./util/build-artifacts.js');
+const styles = require('./util/styles.js');
+
+styles.build();
 
 app.use(serve('public', {
 	index: false

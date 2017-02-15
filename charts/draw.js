@@ -22,7 +22,7 @@ const plotHeight = chartHeight - margin.top - margin.bottom;
 const keyLineLength = 25;
 const keyElementHeight = 20;
 
-function draw(data) {
+function draw(data, style=null) {
   return new Promise(function(resolve, reject) {
     jsdom.env("<html><body></body></html>", function(err, window) {
       if (err) reject(err);
@@ -33,6 +33,11 @@ function draw(data) {
       const svg = body.append('svg')
         .attr('xmlns', 'http://www.w3.org/2000/svg')
         .attr('viewBox', `0 0 ${chartWidth} ${chartHeight}`);
+// add styles if exists      
+      if (style) {
+        svg.append('style')
+          .text(`/* <![CDATA[ */${style}/* ]]> */`);
+      }
 
 // add text
       svg.append('text')

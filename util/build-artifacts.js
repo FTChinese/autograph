@@ -13,6 +13,7 @@ const glossaryDir = path.resolve(__dirname, '../glossary');
 const graphicsDir = `${publicDir}/graphics`;
 const dataDir = `${publicDir}/data`;
 const configDir = `${publicDir}/config`;
+const cssDir = `${publicDir}/styles`;
 
 const csvStatsFile = `${configDir}/csv-stats.json`;
 const svgStatsFile = `${configDir}/svg-stats.json`;
@@ -91,6 +92,15 @@ module.exports = {
             .catch(err => {
                 return {};
             });
+    },
+
+    saveStyles: function(name, result) {
+        const filename = `${cssDir}/${name}.css`;
+        console.log(`Saving styles ${filename}`);
+        return Promise.all([
+            fs.writeAsync(filename, result.css, 'utf8'),
+            fs.writeAsync(`${filename}.map`, result.map, 'utf8')
+        ]);
     },
 
     saveTemp: function (filename, content) {

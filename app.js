@@ -1,21 +1,33 @@
-const path = require('path');
+// const path = require('path');
 const serve = require('koa-static');
 const koa = require('koa');
 const app = koa();
 const logger = require('koa-logger');
-const mount = require('koa-mount');
+// const mount = require('koa-mount');
 const error = require('koa-error');
-const bodyParser = require('koa-bodyparser');
-const index = require('./server/index.js');
+const loadJsonFile = require('load-json-file');
+// const bodyParser = require('koa-bodyparser');
+// const index = require('./server/index.js');
+const render = require('./util/render.js');
+const buildArtifacts = require('./util/build-artifacts.js')
 
-app.use(serve('graphics', {
+app.use(serve('public', {
 	index: false
 }));
 
 app.use(logger());
-app.use(bodyParser());
+// app.use(bodyParser());
 
-app.use(mount('/', index));
+// app.use(mount('/', index));
+
+app.use(function *() {
+	const context = yield {
+		csvs: buildArtifacts.getCsvStats(),
+		charts: buildArtifacts.getSvgStats()
+	};
+
+	this.body = yield render('index.html', context);
+});
 
 const server = app.listen(process.env.PORT || 3000)
 server.on('listening', () => {

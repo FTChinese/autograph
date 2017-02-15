@@ -7,11 +7,19 @@ const app = koa();
 const Router = require('koa-router');
 const router = new Router();
 
-
 const render = require('./render');
+const buildArtifacts = require('../util/build-artifacts.js');
 
 router.get('/', function *(next) {
-	this.body = yield render('index.html');
+
+	const [csvs, charts] = yield [
+		buildArtifacts.getCsvStats, buildArtifacts.getSvgStats];
+	console.log(csvs);
+
+	this.body = yield render('index.html', {
+		csvs,
+		charts
+	});
 });
 
 app

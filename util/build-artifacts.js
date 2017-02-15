@@ -56,6 +56,7 @@ module.exports = {
     },
 
     getSvgStats: function() {
+        console.log(`Loading ${svgStatsFile}`)
         return loadJsonFile(svgStatsFile);
     },
 
@@ -75,6 +76,7 @@ module.exports = {
     },
 
     getCsvStats: function () {
+        console.log(`Loading ${csvStatsFile}`);
         return loadJsonFile(csvStatsFile);
     },
 

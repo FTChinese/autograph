@@ -1,4 +1,5 @@
 module.exports = {
-    csv: require('./csv'),
-    json: require('./json')
+    fetchCsv: require('./csv'),
+    fetchJson: require('./json'),
+    fetchHtml: require('./html')
 };

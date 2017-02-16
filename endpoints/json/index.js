@@ -20,7 +20,10 @@ function fetch(url=uri.svgConfig) {
 }
 
 if (require.main == module) {
-  fetch();
+  fetch()
+    .catch(err => {
+      console.log(err);
+    });
 }
 
 module.exports = fetch;

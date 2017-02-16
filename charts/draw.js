@@ -1,7 +1,6 @@
 const jsdom = require('jsdom');
 const d3 = require('d3');
 const _ = require('lodash');
-const time = require('../util/time-format.js');
 const translate = require('./translate.js');
 const SVGStyles = require('./svg-styles.js');
 const cssLink = '<?xml-stylesheet type="text/css" href="https://ig.ft.com/graphics/bloomberg-economics/chart-style.css" ?>';
@@ -21,6 +20,12 @@ const plotHeight = chartHeight - margin.top - margin.bottom;
 
 const keyLineLength = 25;
 const keyElementHeight = 20;
+
+function convertTime(str) {
+  const parse = d3.timeParse('%d %b %Y');
+  const format = d3.timeFormat('%Y年%-m月%-d日');
+  return format(parse(str));
+}
 
 function draw(data, style=null) {
   return new Promise(function(resolve, reject) {
@@ -53,7 +58,7 @@ function draw(data, style=null) {
       svg.append('text')
           .attr('class', 'chart-source')
           .attr('y', chartHeight - 5)
-          .text(`来源: ${translate(data.source)}. ${time.format(data.updated)}`);
+          .text(`来源:${translate(data.source)}. ${convertTime(data.updated)}`);
 
 // line's container
       const container = svg.append('g')

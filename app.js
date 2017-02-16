@@ -12,7 +12,7 @@ const render = require('./util/render.js');
 const buildArtifacts = require('./util/build-artifacts.js');
 const styles = require('./util/styles.js');
 
-styles.build();
+// styles.build();
 
 app.use(serve('public', {
 	index: false

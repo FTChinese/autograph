@@ -1,22 +1,21 @@
-{% extends "base.html" %}
-{% block body %}
+{% extends "base.html" %} {% block body %}
 <h1>经济数据一览</h1>
 <nav>
- <a href="#datasets">下载CSV</a>
- <a href="#charts">图表</a>
+    <a href="#datasets">下载CSV</a>
+    <a href="#charts">图表</a>
 </nav>
 
 <h2 id="datasets">下载CSV</h2>
-<table>
+<table class="datasets">
     <tbody>
         {% for csv in csvs%}
-        <tr>
-            <td{% if csv.isToday %} class="today"{% endif %}>
+        <tr{% if csv.isToday %} class="today" {% endif %}>
+            <td>
                 <a href="data/{{csv.name}}">{{csv.name}}</a> ({{csv.size}})
             </td>
             <td>{{csv.lastModified}}</td>
-        </tr>
-        {% endfor %}
+            </tr>
+            {% endfor %}
     </tbody>
 </table>
 
@@ -26,11 +25,10 @@
     <div class="chart">
         <object data="graphics/{{chart.name}}" type="image/svg+xml"></object>
         <p>
-            <small>{{chart.lastModified}}</small>
-            {% if chart.isToday %}<span class="label today">Today</span>{% endif %}
+            <small>{{chart.lastModified}}</small> {% if chart.isToday %}<span class="label today">Today</span>{% endif %}
         </p>
         <p>
-            <a href="graphics/{{chart.name}}" download>svg ({{chart.size}})</a> | 
+            <a href="graphics/{{chart.name}}" download>svg ({{chart.size}})</a> |
             <a href="" download>png</a>
         </p>
     </div>

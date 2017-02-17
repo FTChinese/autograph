@@ -6,6 +6,7 @@ const job = new CronJob({
     cronTime: '0 0 * * *',
     onTick: autoGraph,
     start: true,
+// See https://en.wikipedia.org/wiki/Time_in_China
     timeZone: 'Asia/Shanghai',
     runOnInit: true
 });

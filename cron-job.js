@@ -1,4 +1,4 @@
-const CronJob = require('cron');
+const CronJob = require('cron').CronJob;
 const autoGraph = require('./index.js');
 
 const job = new CronJob({

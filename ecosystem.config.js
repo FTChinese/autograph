@@ -21,7 +21,7 @@ module.exports = {
     // Second application
     {
       name      : "autograph-crawler",
-      script    : "index.js"
+      script    : "cron-job.js"
     }
   ],
 

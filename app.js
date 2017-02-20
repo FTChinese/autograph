@@ -3,11 +3,11 @@ const serve = require('koa-static');
 const koa = require('koa');
 const app = koa();
 const logger = require('koa-logger');
-// const mount = require('koa-mount');
+const mount = require('koa-mount');
 const error = require('koa-error');
 const loadJsonFile = require('load-json-file');
-// const bodyParser = require('koa-bodyparser');
-// const index = require('./server/index.js');
+const bodyParser = require('koa-bodyparser');
+const payload = require('./server/payload.js');
 const render = require('./util/render.js');
 const buildArtifacts = require('./util/build-artifacts.js');
 const styles = require('./util/styles.js');
@@ -21,9 +21,9 @@ app.use(serve('public', {
 }));
 
 app.use(logger());
-// app.use(bodyParser());
+app.use(bodyParser());
 
-// app.use(mount('/', index));
+app.use(mount('/payload', payload));
 
 app.use(function *() {
 	const today = new Date().toDateString();

@@ -3,7 +3,7 @@ const d3 = require('d3');
 const _ = require('lodash');
 const translate = require('./translate.js');
 const SVGStyles = require('./svg-styles.js');
-const cssLink = '<?xml-stylesheet type="text/css" href="https://ig.ft.com/graphics/bloomberg-economics/chart-style.css" ?>';
+// const cssLink = '<?xml-stylesheet type="text/css" href="https://ig.ft.com/graphics/bloomberg-economics/chart-style.css" ?>';
 
 const chartWidth = 304;
 const chartHeight = 270;
@@ -172,7 +172,7 @@ function draw(data, style=null) {
             .attr('stroke-width', 2); 
       });
 
-      resolve(cssLink + String(body.html()));
+      resolve(String(body.html()));
     });
 // render ends  
   });  

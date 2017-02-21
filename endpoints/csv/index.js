@@ -30,8 +30,8 @@ function fetch(csvs) {
 
 
 if (require.main == module) {
-  const html = require('../html');
-  html()
+  const fetchHtml = require('../html');
+  fetchHtml()
     .then(stats => {
       console.log(stats);
       return fetch(stats.csvs);

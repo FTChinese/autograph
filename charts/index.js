@@ -58,14 +58,11 @@ if (require.main == module) {
     const endpoints = require('../endpoints');
 
     co(function *() {
-        let data = null;
-        try {
-            data = yield buildArtifacts.getSvgConfig();
-        } catch (err) {
-            data = yield endpoints.json();
-        }
-        const {svgTimestamps} = yield endpoints.html();
-        yield render(data, svgTimestamps);
+        const [data, stats] = yield [
+          endpoints.fetchJson(),
+          endpoints.fetchHtml()
+        ];
+        yield render(data, stats.svgTimestamps);
     })
     .catch(err => {
         throw err;

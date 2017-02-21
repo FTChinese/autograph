@@ -30,7 +30,7 @@ module.exports = {
     saveSvg: function (name, svgString) {
         const filename = `${slug(name)}.svg`;
         console.log(`Saving SVG: ${filename}`);
-        return fs.writeAsync(`${graphicsDir}/${filename}`, svgString, 'utf8')
+        return fs.writeAsync(`${graphicsDir}/${filename}`, svgString)
             .then(() => {
                 return {
                     name: filename,
@@ -65,7 +65,7 @@ module.exports = {
     saveCsv: function (filename, csvString) {
         const dest = `${dataDir}/${filename}`;
         console.log(`Saving: ${dest}`);
-        return fs.writeAsync(dest, csvString, 'utf8')
+        return fs.writeAsync(dest, csvString)
             .then(() => {
                 return humanReadableSize(csvString);
             });
@@ -98,12 +98,12 @@ module.exports = {
         const filename = `${cssDir}/${name}.css`;
         console.log(`Saving styles ${filename}`);
         return Promise.all([
-            fs.writeAsync(filename, result.css, 'utf8'),
-            fs.writeAsync(`${filename}.map`, result.map, 'utf8')
+            fs.writeAsync(filename, result.css),
+            fs.writeAsync(`${filename}.map`, result.map)
         ]);
     },
 
     saveTemp: function (filename, content) {
-        return fs.writeAsync(`${path.resolve(__dirname, '../.tmp')}/${filename}`, content, 'utf8');
+        return fs.writeAsync(`${path.resolve(__dirname, '../.tmp')}/${filename}`, content);
     }
 }

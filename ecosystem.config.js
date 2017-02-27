@@ -14,10 +14,8 @@ module.exports = {
         PORT: 3001
       },
       env_production : {
-        NODE_ENV: "production"
-      },
-      env_dev: {
-        NODE_ENV: "development"
+        NODE_ENV: "production",
+        PUBLIC_DIR: ""
       }
     },
 
@@ -26,8 +24,7 @@ module.exports = {
       name      : "autograph-crawler",
       script    : "cron-job.js",
       env: {
-        NODE_ENV: "development",
-        PUBLIC_DIR: "public"
+        NODE_ENV: "development"
       },
       env_production: {
         NODE_ENV: "production",

@@ -17,14 +17,22 @@ module.exports = {
         NODE_ENV: "production"
       },
       env_dev: {
-        NODE_ENV: "dev"
+        NODE_ENV: "development"
       }
     },
 
     // Second application
     {
       name      : "autograph-crawler",
-      script    : "cron-job.js"
+      script    : "cron-job.js",
+      env: {
+        NODE_ENV: "development",
+        PUBLIC_DIR: "public"
+      },
+      env_production: {
+        NODE_ENV: "production",
+        PUBLIC_DIR: ""
+      }
     }
   ],
 

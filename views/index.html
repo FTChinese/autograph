@@ -11,7 +11,7 @@
         {% for csv in csvs%}
         <tr{% if csv.isToday %} class="today" {% endif %}>
             <td>
-                <a href="./data/{{csv.name}}">{{csv.name}}</a> ({{csv.size}})
+                <a href="data/{{csv.name}}">{{csv.name}}</a> ({{csv.size}})
             </td>
             <td>{{csv.lastModified}}</td>
             </tr>

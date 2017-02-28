@@ -33,8 +33,7 @@ function extract(html) {
     return csvName;
   }).get();
 
-  const svgTimestamps = {};
-  chartEls.each((index, element) => {
+  const svgStats = chartEls.map((index, element) => {
     const svgUrl = $(element).children('object').attr('data');
     const svgName = path.basename(svgUrl);
     const lastModified = $(element).children('p')
@@ -42,13 +41,15 @@ function extract(html) {
       .children('small')
       .eq(0)
       .text();
-
-    svgTimestamps[svgName] = lastModified;
+    return {
+      name: svgName,
+      lastModified: lastModified
+    }
   }).get();
 
   return {
-    csvs: csvStats,
-    svgTimestamps: svgTimestamps
+    csv: csvStats,
+    svg: svgStats
   }
 }
 

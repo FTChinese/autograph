@@ -1,8 +1,9 @@
 const got = require('got');
 const uri = require('../../util/uri.js');
-const extract = require('./extract.js'); 
+const extract = require('./extract.js');
+const buildArtifacts = require('../../util/build-artifacts.js');
 
-function fetchHtml(url=uri.index) {
+function fetchAndExtract(url=uri.index) {
   console.log(`fetching: ${url}`);
   return got(url)
     .then(res => {
@@ -11,19 +12,22 @@ function fetchHtml(url=uri.index) {
     .then(contents => {
       return extract(contents);
     })
+    .then(stats => {
+      return Promise.all([
+        buildArtifacts.saveCsvStats(stats.csv),
+        buildArtifacts.saveSvgStats(stats.svg)
+      ]);
+    })
     .catch(err => {
-      console.log(err);
+      return err;
     });
 }
 
 if (require.main == module) {
-  fetchHtml()
-    .then(result => {
-      console.log(result);
-    })
+  fetchAndExtract()
     .catch(err => {
       console.log(err);
     });
 }
 
-module.exports = fetchHtml;
+module.exports = fetchAndExtract;

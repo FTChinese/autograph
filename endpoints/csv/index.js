@@ -19,6 +19,9 @@ function fetch(csvs) {
       .then(size => {
 // merge size into `csv` object and return a new object
         return Object.assign({}, csv, {size});
+      })
+      .catch(err => {
+        return err;
       });
   });
 // parrallel excection of all fetch and save csv statistics

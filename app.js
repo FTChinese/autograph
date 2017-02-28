@@ -7,7 +7,7 @@ const buildArtifacts = require('./util/build-artifacts.js');
 const styles = require('./util/styles.js');
 
 // styles.build();
-
+app.proxy = true;
 app.use(logger());
 app.use(serve('public', {
 	index: false

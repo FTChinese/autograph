@@ -2,46 +2,38 @@ const got = require('got');
 const buildArtifacts = require('../../util/build-artifacts.js');
 const uri = require('../../util/uri.js');
 
-/*
- * `csvs` is an array of object.
-*/
-function fetch(csvs) {
-  const promisedStats = csvs.map(csv => {
-// construct url with csv.name    
-    const url = uri.ofCsv(csv.name);
-    console.log(`fetching: ${url}`);
-// fetch this url    
-    return got(url)
-      .then(res => {
-// save the fetched contents and return the filesize calcaluted from contents        
-        return buildArtifacts.saveCsv(csv.name, res.body);
-      })
-      .then(size => {
-// merge size into `csv` object and return a new object
-        return Object.assign({}, csv, {size});
-      })
-      .catch(err => {
-        return err;
-      });
-  });
-// parrallel excection of all fetch and save csv statistics
-  return Promise.all(promisedStats)
-    .then(stats => {
-      return buildArtifacts.saveCsvStats(stats);
-    });
-}
-
-
-if (require.main == module) {
-  const fetchHtml = require('../html');
-  fetchHtml()
-    .then(stats => {
-      console.log(stats);
-      return fetch(stats.csvs);
+function getAndSaveCsv(name) {
+  const url = uri.ofCsv(name);
+  console.log(`Fetching: ${url}`);
+  return got(url)
+    .then(res => {
+      return res.body;
+    })
+    .then(body => {
+      return buildArtifacts.saveCsv(name, body);
     })
     .catch(err => {
-      console.log(err);
+      return err;
     });
 }
 
-module.exports = fetch;
+function fetchCsvs() {
+  return buildArtifacts.getCsvStats()
+    .then(csvStats => {
+      return Promise.all(csvStats.map(csv => {
+        return getAndSaveCsv(csv.name);
+      }));
+    })
+    .catch(err => {
+      return err;
+    });
+}
+
+if (require.main == module) {
+  fetchCsvs()
+    .catch(e => {
+      console.log(e);
+    });
+}
+
+module.exports = fetchCsvs;

@@ -22,8 +22,8 @@ app.use(function *() {
 	};
 
 	const context = {
-		csvs: csvs.sort(compare).map(addIsToday),
-		charts: charts.sort(compare).map(addIsToday)
+		csvs: csvs.map(addIsToday),
+		charts: charts.map(addIsToday)
 	}
 
 	this.body = yield render('index.html', context);
@@ -40,7 +40,3 @@ const server = app.listen(process.env.PORT || 3000)
 server.on('listening', () => {
 	console.log(`Client listening on port ${process.env.PORT || 3000}`);
 });
-
-function compare(a, b) {
-	return Date.parse(b.lastModified) - Date.parse(a.lastModified);
-}

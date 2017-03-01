@@ -8,7 +8,7 @@ var env = new nunjucks.Environment(
     ], 
     {
     	noCache: true,
-    	watch: true
+    	watch: false
     }
   ),
   {autoescape: false}

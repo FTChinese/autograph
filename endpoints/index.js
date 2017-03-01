@@ -1,5 +1,5 @@
 module.exports = {
     fetchCsv: require('./csv'),
     fetchJson: require('./json'),
-    fetchHtml: require('./html')
+    extractStats: require('./html')
 };

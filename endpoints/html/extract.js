@@ -24,13 +24,15 @@ function extract(html) {
 
   const csvStats = rowEls.map((index, element) => {
     const tdEls = $(element).children('td');
-    const csvName = tdEls.eq(0).children('a').text();
+    const firstTdEl = tdEls.eq(0);
+    const csvName = firstTdEl.children('a').text();
+    const size = firstTdEl.clone().children().remove().end().text();
     const lastModified = tdEls.eq(1).text();
     return {
       "name": csvName,
+      "size": size.trim(),
       "lastModified": lastModified
     }
-    return csvName;
   }).get();
 
   const svgStats = chartEls.map((index, element) => {
@@ -43,6 +45,7 @@ function extract(html) {
       .text();
     return {
       name: svgName,
+      size: "",
       lastModified: lastModified
     }
   }).get();

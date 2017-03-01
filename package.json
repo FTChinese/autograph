@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FTChinese/autograph#readme",
   "dependencies": {
+    "chalk": "^1.1.3",
     "cheerio": "^0.22.0",
     "co": "^4.6.0",
     "cron": "^1.2.1",

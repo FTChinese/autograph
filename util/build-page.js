@@ -1,10 +1,9 @@
 const render = require('./render.js');
-const buildArtifacts = require('./build-artifacts.js');
 const styles = require('./styles.js');
+const buildArtifacts = require('./build-artifacts.js');
 
-const today = new Date().toDateString();
-
-async function buildList() {
+// returns the html string to be used by Koa.
+async function buildPage() {
   try {
     const [csvs, charts] = await Promise.all([
       buildArtifacts.getCsvStats(),
@@ -12,8 +11,8 @@ async function buildList() {
     ]);
 
     const context = {
-      csvs: csvs.map(addIsToday),
-      charts: charts.map(addIsToday)
+      csvs: csvs.map(isToday),
+      charts: charts.map(isToday)
     }
 
     const html = await render('index.html', context);
@@ -24,15 +23,21 @@ async function buildList() {
   }
 }
 
-function addIsToday(o) {
-  const modifiedDate = new Date(o.lastModified).toDateString();
+function isToday(o) {
+  const today = getUTCDateString(new Date());
+  const modifiedDate = getUTCDateString(new Date(o.lastModified));
+
   return Object.assign(o, {
     isToday: modifiedDate === today ? true : false
   });
 }
 
+function getUTCDateString(date) {
+  return `${date.getUTCFullYear()}${date.getUTCMonth() + 1}${date.getUTCDate()}`
+}
+
 if (require.main = module) {
-  buildList()
+  buildPage()
     .then(html => {
       return buildArtifacts.saveIndexPage(html);
     })
@@ -41,4 +46,4 @@ if (require.main = module) {
     });
 }
 
-module.exports = buildList;
+module.exports = buildPage;

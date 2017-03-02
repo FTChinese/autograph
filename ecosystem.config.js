@@ -6,18 +6,18 @@ module.exports = {
   apps : [
 
     // First application
-    {
-      name      : "autograph-server",
-      script    : "app.js",
-      env: {
-        NODE_ENV: "development",
-        PORT: 3001
-      },
-      env_production : {
-        NODE_ENV: "production",
-        PUBLIC_DIR: ""
-      }
-    },
+    // {
+    //   name      : "autograph-server",
+    //   script    : "app.js",
+    //   env: {
+    //     NODE_ENV: "development",
+    //     PORT: 3001
+    //   },
+    //   env_production : {
+    //     NODE_ENV: "production",
+    //     PUBLIC_DIR: ""
+    //   }
+    // },
 
     // Second application
     {

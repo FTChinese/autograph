@@ -22,6 +22,7 @@ function render(src) {
 
 function build(src=uri.mainScss) {
   const name = path.basename(src, '.scss');
+  console.log(`Compiling SCSS file: ${src}`);
   return render(src)
     .then(result => {
         return buildArtifacts.saveStyles(name, result);

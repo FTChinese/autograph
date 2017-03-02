@@ -7,7 +7,7 @@ const buildPage = require('./util/build-page.js');
 // styles.build();
 app.proxy = true;
 app.use(logger());
-app.use(serve('public', {
+app.use(serve('public/autograph', {
 	index: false
 }));
 

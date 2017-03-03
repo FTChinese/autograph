@@ -12,6 +12,7 @@ app.use(serve('public', {
 }));
 
 app.use(async (ctx) => {
+	console.log('Home page');
 	ctx.body = await buildPage();
 });
 

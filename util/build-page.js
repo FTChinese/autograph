@@ -36,7 +36,7 @@ function getUTCDateString(date) {
   return `${date.getUTCFullYear()}${date.getUTCMonth() + 1}${date.getUTCDate()}`
 }
 
-if (require.main = module) {
+if (require.main == module) {
   buildPage()
     .then(html => {
       return buildArtifacts.saveIndexPage(html);

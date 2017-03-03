@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "postversion": "git push && git push --tags",
     "glossary": "node ./translate/glossary.js"
   },

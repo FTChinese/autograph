@@ -6,29 +6,33 @@ module.exports = {
   apps : [
 
     // First application
-    // {
-    //   name      : "autograph-server",
-    //   script    : "app.js",
-    //   env: {
-    //     NODE_ENV: "development",
-    //     PORT: 3001
-    //   },
-    //   env_production : {
-    //     NODE_ENV: "production",
-    //     PUBLIC_DIR: ""
-    //   }
-    // },
+    {
+      name      : "autograph-server",
+      script    : "app.js",
+      interpreter: "~/n/versions/node/7.7.1/bin/node",
+      env: {
+        NODE_ENV: "development",
+        PORT: 4000,
+        PUBLIC_DIR: "public/autograph"
+      },
+      env_production : {
+        NODE_ENV: "production",
+        PUBLIC_DIR: "~/static/autograph"
+      }
+    },
 
     // Second application
     {
       name      : "autograph-crawler",
       script    : "cron-job.js",
+      interpreter: "~/n/versions/node/7.7.1/bin/node",
       env: {
-        NODE_ENV: "development"
+        NODE_ENV: "development",
+        PUBLIC_DIR: "public/autograph"
       },
       env_production: {
         NODE_ENV: "production",
-        PUBLIC_DIR: ""
+        PUBLIC_DIR: "~/static/autograph"
       }
     }
   ],

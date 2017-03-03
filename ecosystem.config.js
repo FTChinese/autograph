@@ -1,3 +1,8 @@
+const path = require('path');
+const interpreter = path.resolve(process.env.HOME, 'n/versions/node/7.7.1/bin/node');
+const staticDir = path.resolve(process.env.HOME, 'static/autograph');
+const publicUrl = 'http://ig.ftchinese.com/autograph';
+
 module.exports = {
   /**
    * Application configuration section
@@ -9,15 +14,16 @@ module.exports = {
     {
       name      : "autograph-server",
       script    : "app.js",
-      interpreter: "~/n/versions/node/7.7.1/bin/node",
+      interpreter: interpreter,
       env: {
         NODE_ENV: "development",
         PORT: 4000,
-        PUBLIC_DIR: "public/autograph"
+        PUBLIC_DIR: "public/autograph",
+        PUBLIC_URL: publicUrl
       },
       env_production : {
         NODE_ENV: "production",
-        PUBLIC_DIR: "~/static/autograph"
+        PUBLIC_DIR: staticDir
       }
     },
 
@@ -25,14 +31,15 @@ module.exports = {
     {
       name      : "autograph-crawler",
       script    : "cron-job.js",
-      interpreter: "~/n/versions/node/7.7.1/bin/node",
+      interpreter: interpreter,
       env: {
         NODE_ENV: "development",
-        PUBLIC_DIR: "public/autograph"
+        PUBLIC_DIR: "public/autograph",
+        PUBLIC_URL: publicUrl
       },
       env_production: {
         NODE_ENV: "production",
-        PUBLIC_DIR: "~/static/autograph"
+        PUBLIC_DIR: staticDir
       }
     }
   ],

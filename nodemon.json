@@ -4,6 +4,10 @@
     "test/**",
     "client/**"
   ],
+  "env": {
+    "PUBLIC_URL": "http://localhost:4000/autograph",
+    "PORT": 4000
+  },
   "verbose": true,
   "ext": "js json"
 }

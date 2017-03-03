@@ -11,6 +11,7 @@ async function buildPage() {
     ]);
 
     const context = {
+      publicUrl: encodeURIComponent(process.env.PUBLIC_URL),
       csvs: csvs.map(isToday),
       charts: charts.map(isToday)
     }

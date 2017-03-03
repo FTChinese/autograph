@@ -44,7 +44,7 @@ async function renderCharts() {
 // Read `nightingale-config.json` and the compile css.    
     const svgConfig = await buildArtifacts.getSvgConfig();
 
-    const css = await styles.render(uri.chartScss)
+    const css = await styles.render(uri.chartScss, false)
       .then(result => {
 // Only use css. Discard map. Remove any newline.
         return result.css.toString().replace(/\n/g, '');

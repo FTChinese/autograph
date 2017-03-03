@@ -3,12 +3,12 @@ const path = require('path');
 const buildArtifacts = require('./build-artifacts.js');
 const uri = require('./uri.js');
 
-function render(src) {
+function render(src, useMap=true) {
   return new Promise(function(resolve, reject) {
     sass.render({
       file: src,
       outputStyle: 'compressed',
-      sourceMap: true,
+      sourceMap: useMap,
       outFile: `${path.basename(src, '.scss')}.css`
     }, (err, result) => {
       if (err) {

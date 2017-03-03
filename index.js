@@ -25,14 +25,14 @@ async function autoGraph() {
     console.log(chalk.red(e));
   }
 
-  try {
-  // Generate a static html file
-  // Read `csv-stats.json` and `svg-stats.json` as nunjucks rendering context.
-    const html = await buildPage();
-    await buildArticfacts.saveIndexPage(html);
-  } catch(e) {
-    console.log(chalk.red(e));
-  }
+  // try {
+  // // Generate a static html file
+  // // Read `csv-stats.json` and `svg-stats.json` as nunjucks rendering context.
+  //   const html = await buildPage();
+  //   await buildArticfacts.saveIndexPage(html);
+  // } catch(e) {
+  //   console.log(chalk.red(e));
+  // }
 }
 
 if (require.main == module) {

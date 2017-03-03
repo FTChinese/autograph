@@ -18,7 +18,6 @@ module.exports = {
       env: {
         NODE_ENV: "development",
         PORT: 4000,
-        PUBLIC_DIR: "public/autograph",
         PUBLIC_URL: publicUrl
       },
       env_production : {
@@ -34,7 +33,6 @@ module.exports = {
       interpreter: interpreter,
       env: {
         NODE_ENV: "development",
-        PUBLIC_DIR: "public/autograph",
         PUBLIC_URL: publicUrl
       },
       env_production: {

@@ -7,7 +7,7 @@ const filesize = require('filesize');
 
 const uri = require('./uri.js');
 
-const publicDir = path.resolve(process.cwd(), process.env.PUBLIC_DIR ? process.env.PUBLIC_DIR : 'public/autograph');
+const publicDir = path.resolve(process.cwd(), process.env.PUBLIC_DIR ? process.env.PUBLIC_DIR : 'public');
 
 const glossaryDir = path.resolve(process.cwd(), 'glossary');
 const graphicsDir = `${publicDir}/graphics`;

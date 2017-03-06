@@ -13,6 +13,7 @@ module.exports = {
     {
       name      : "autograph-server",
       script    : "app.js",
+      log_date_format: "YYYY-MM-DD HH:mm Z",
       // interpreter: interpreter,
       env: {
         NODE_ENV: "development",
@@ -29,6 +30,7 @@ module.exports = {
     {
       name      : "autograph-crawler",
       script    : "cron-job.js",
+      log_date_format: "YYYY-MM-DD HH:mm Z",
       // interpreter: interpreter,
       env: {
         NODE_ENV: "development",
@@ -48,22 +50,11 @@ module.exports = {
   deploy : {
     production : {
       user : "node",
-      host : "212.83.163.1",
+      host : "localhost",
       ref  : "origin/master",
       repo : "git@github.com:FTChinese/autograph.git",
       path : "/var/www/production",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
-    },
-    dev : {
-      user : "node",
-      host : "node.corp.ftchinese.com",
-      ref  : "origin/master",
-      repo : "git@github.com:FTChinese/autograph.git",
-      path : "/data/git/ftacademy",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env dev",
-      env  : {
-        NODE_ENV: "dev"
-      }
     }
   }
 }

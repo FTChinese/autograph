@@ -14,7 +14,7 @@ module.exports = {
       name      : "autograph-server",
       script    : "app.js",
       log_date_format: "YYYY-MM-DD HH:mm Z",
-      // interpreter: interpreter,
+      interpreter: interpreter,
       env: {
         NODE_ENV: "development",
         PORT: 4000,
@@ -31,7 +31,7 @@ module.exports = {
       name      : "autograph-crawler",
       script    : "cron-job.js",
       log_date_format: "YYYY-MM-DD HH:mm Z",
-      // interpreter: interpreter,
+      interpreter: interpreter,
       env: {
         NODE_ENV: "development",
         PUBLIC_URL: publicUrl

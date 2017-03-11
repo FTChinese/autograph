@@ -1,3 +1,4 @@
+const moment = require('moment-timezone');
 const render = require('./render.js');
 const styles = require('./styles.js');
 const buildArtifacts = require('./build-artifacts.js');
@@ -25,17 +26,15 @@ async function buildPage() {
 }
 
 function isToday(o) {
-  const today = getUTCDateString(new Date());
-  const modifiedDate = getUTCDateString(new Date(o.lastModified));
+  const timeZone = 'Asia/Shanghai';
+  const today = moment.utc().tz(timeZone);
+  const modifiedDate = moment(new Date(o.lastModified)).tz(timeZone);
 
   return Object.assign(o, {
-    isToday: modifiedDate === today ? true : false
+    isToday: modifiedDate.isSame(today, 'day')
   });
 }
 
-function getUTCDateString(date) {
-  return `${date.getUTCFullYear()}${date.getUTCMonth() + 1}${date.getUTCDate()}`
-}
 
 if (require.main == module) {
   buildPage()

@@ -9,5 +9,6 @@ module.exports = {
         return `${this.index}config/nightingale-config.json`
     },
     chartScss: path.resolve(__dirname, '../client/chart-styles.scss'),
-    mainScss: path.resolve(__dirname, '../client/main.scss')
+    mainScss: path.resolve(__dirname, '../client/main.scss'),
+    publicDir: path.resolve(process.cwd(), process.env.PUBLIC_DIR ? process.env.PUBLIC_DIR : 'public')
 };

@@ -3,6 +3,7 @@ const Koa = require('koa');
 const app = new Koa();
 const logger = require('koa-logger');
 const buildPage = require('./util/build-page.js');
+const uri = require('./util/uri.js');
 const styles = require('./util/styles.js');
 
 styles.build()
@@ -15,7 +16,7 @@ styles.build()
 
 app.proxy = true;
 app.use(logger());
-app.use(serve('public/autograph', {
+app.use(serve(uri.publicDir, {
 	index: false
 }));
 

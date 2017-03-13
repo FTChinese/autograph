@@ -27,11 +27,14 @@ async function buildPage() {
 
 function isToday(o) {
   const timeZone = 'Asia/Shanghai';
+  // Create a UTC time and explicitly convert to Beijing time.
   const today = moment.utc().tz(timeZone);
-  const modifiedDate = moment(new Date(o.lastModified)).tz(timeZone);
+  // Convert modification time to Beijing time.
+  const modifiedTime = moment.utc(new Date(o.lastModified)).tz(timeZone);
 
-  return Object.assign(o, {
-    isToday: modifiedDate.isSame(today, 'day')
+  return Object.assign({}, o, {
+    isToday: modifiedTime.isSame(today, 'day'),
+    lastModified: modifiedTime.format('YYYY年M月D日 HH:mm:ss')
   });
 }
 

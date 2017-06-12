@@ -1,5 +1,5 @@
 const path = require('path');
-const interpreter = path.resolve(process.env.HOME, 'n/versions/node/7.7.1/bin/node');
+const interpreter = path.resolve(process.env.HOME, '.nvm/versions/node/v7.10.0/bin/node');
 const publicUrl = 'http://ig.ftchinese.com/autograph';
 
 module.exports = {

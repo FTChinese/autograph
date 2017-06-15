@@ -1,5 +1,4 @@
-const _ = require('lodash');
-const chalk = require('chalk');
+const debug = require('debug')('ag:charts');
 const buildArtifacts = require('../util/build-artifacts.js');
 const draw = require('./draw.js');
 const styles = require('../util/styles.js');
@@ -12,62 +11,51 @@ async function updateStats() {
 // Get the stats extracted from HTML
     const svgStats = await buildArtifacts.getSvgStats();
 
-    console.log(chalk.red(`\nNumber of SVGs on ig.ft.com/autograph: ${svgStats.length}`));
+    debug(`Number of SVGs on ig.ft.com/autograph: ${svgStats.length}`);
 
-    const statsWithSize = await Promise.all(svgStats.map(stat => {
-      return buildArtifacts.getSvgSize(stat.name)
-        .then(size => {
-          return Object.assign({}, stat, {size});
-        })
-        .catch(err => {
-// If `getSvgSize` throws an error, catch it and replace the current element with {}.
-          missingSvgs.push(stat.name);
-          return {};
-        });
-    }));
+    async function getFileSize(stat) {
+      try {
+        const size = await buildArtifacts.getSvgSize(stat.name);
+        return Object.assign({}, stat, {size});
+      } catch(err) {
+        missingSvgs.push(stat.name);
+        return null;
+      }
+    }
+    const statsWithSize = await Promise.all(getFileSize);
 
 // Filter the empty element.
     const actualStats = statsWithSize.filter(element => {
-      return !(_.isEmpty(element));
+      return !!element;
     });
 
-    console.log(chalk.red(`SVGs atually generated: ${actualStats.length}`));
+    debug(`SVGs atually generated: ${actualStats.length}`);
 
-    console.log(chalk.red(`\n"nightingale-config.json" has ${missingSvgs.length} SVGs missed:`));
-    console.log(missingSvgs);
+    debug(`"nightingale-config.json" has ${missingSvgs.length} SVGs missed:`);
+    debug(missingSvgs);
 
     return actualStats;
 }
 
 async function renderCharts() {
-  try {
 // Read `nightingale-config.json` and the compile css.    
-    const svgConfig = await buildArtifacts.getSvgConfig();
+  const svgConfig = await buildArtifacts.getSvgConfig();
 
-    const css = await styles.render(uri.chartScss, false)
-      .then(result => {
+  const css = await styles.render(uri.chartScss, false)
+    .then(result => {
 // Only use css. Discard map. Remove any newline.
-        return result.css.toString().replace(/\n/g, '');
-      });
+      return result.css.toString().replace(/\n/g, '');
+    });
 
 // Draw svg and save it
-    await Promise.all(svgConfig.map(svg => {
-      return draw(svg, css)
-        .then(result => {
-          return buildArtifacts.saveSvg(svg.title, result);
-        })
-        .catch(err => {
-          return err;
-        });
-    }));
+  await Promise.all(svgConfig.map(async function(svg) {
+    const result = await draw(svg, css)
+    return await buildArtifacts.saveSvg(svg.title, result);
+  }));
 
 // After the svg is updated and written, use `fs.stat` to get the file's size, and merge it into `svg-stats.json`
-    const svgStats = await updateStats();
-    await buildArtifacts.saveSvgStats(svgStats);
-
-  } catch (e) {
-    throw e;
-  }
+  const svgStats = await updateStats();
+  await buildArtifacts.saveSvgStats(svgStats);
 }
 
 if (require.main == module) {

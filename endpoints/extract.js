@@ -5,17 +5,8 @@ const path = require('path');
 /**
  * @param {String} html - Contents scraped from ig.ft.com/autograph
  * @returns {Object}
- * {
- *  csvs: [
- *    {
- *      name: "cn-interbank.csv",
- *      lastModified: "Mon, 20 Feb 2017 02:06:13 GMT"
- *    }
- *  ],
- *  svgTimestamps: {
- *    "unemployment-rate.svg": "Wed, 15 Feb 2017 13:20:51 GMT"
- *  }
- * }   
+ * @property {Object[]} csv
+ * @property {Object[]} svg   
  */
 function extract(html) {
   const $ = cheerio.load(html);
@@ -45,7 +36,6 @@ function extract(html) {
       .text();
     return {
       name: svgName,
-      size: "",
       lastModified: lastModified
     }
   }).get();

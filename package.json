@@ -37,6 +37,7 @@
     "moment-timezone": "^0.5.11",
     "node-sass": "^4.5.0",
     "nunjucks": "^3.0.0",
+    "pify": "^3.0.0",
     "speakingurl": "^13.0.0",
     "write-json-file": "^2.0.0"
   },

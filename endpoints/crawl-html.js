@@ -23,10 +23,11 @@ async function fetch(url=uri.autograph) {
   debug(`Total CSVs: ${stats.csv.length}`);
   debug(`Total SVGs: ${stats.svg.length}`);
 
-  return Promise.all([
+  await Promise.all([
     crud.saveCsvStats(stats.csv),
     crud.saveSvgStats(stats.svg)
   ]);
+  return stats;
 }
 
 if (require.main == module) {

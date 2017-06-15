@@ -1,45 +1,23 @@
-const sass = require('node-sass');
+const pify = require('pify');
+const sass = pify(require('node-sass').render);
 const path = require('path');
-const buildArtifacts = require('./build-artifacts.js');
-const uri = require('./uri.js');
+const uri = require('./uri');
 
-function render(src, useMap=true) {
-  return new Promise(function(resolve, reject) {
-    sass.render({
-      file: src,
-      outputStyle: 'compressed',
-      sourceMap: useMap,
-      outFile: `${path.basename(src, '.scss')}.css`
-    }, (err, result) => {
-      if (err) {
-          reject(err);
-      } else {
-          resolve(result);
-      }  
-    });
+async function styles(src=uri.chartScss) {
+  const result =  await sass({
+    file: src,
+    includePaths: ['bower_components'],
+    outputStyle: 'compressed',
+    precision: 10
   });
-}
-
-function build(src=uri.mainScss) {
-  const name = path.basename(src, '.scss');
-  console.log(`Compiling SCSS file: ${src}`);
-  return render(src)
-    .then(result => {
-        return buildArtifacts.saveStyles(name, result);
-    })
-    .catch(err => {
-      throw err;
-    });
+  return result.css.toString();
 }
 
 if (require.main == module) {
-  build()
+  css()
     .catch(err => {
         console.log(err);
     });
 }
 
-module.exports = {
-	render: render,
-	build: build
-}
+module.exports = styles;

@@ -17,10 +17,13 @@ async function fetch(url=uri.nightingale) {
     .then(res => {
       return res.body;
     });
+
   const end = new Date()
   debug(`Length of nightingale-config.json: ${nightingale.length}`);
   debug(`Time used ${(end - start)/1000}s`);
-  return crud.saveSvgConfig(nightingale);
+
+  await crud.saveSvgConfig(nightingale);
+  return nightingale;
 }
 
 if (require.main == module) {

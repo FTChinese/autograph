@@ -1,17 +1,25 @@
-const postcss = require('postcss');
-const cssnext = require('postcss-cssnext');
-const cssvariables = require('postcss-css-variables');
 const fs = require('fs-jetpack');
+const path = require('path');
+const postcss = require('postcss');
+const mixins = require('postcss-mixins');
+const cssvariables = require('postcss-css-variables');
+const nested = require('postcss-nested');
+const cssnext = require('postcss-cssnext');
 
 async function css() {
-  const mycss = await fs.readAsync('client/chart-styles.css');
+  const src = path.resolve(__dirname, '../client/chart-styles.css');
+  const dest = path.resolve(__dirname, '../.tmp/chart-styles.css');
+  const mycss = await fs.readAsync(src);
+
   const output = postcss([
-    cssvariables()
-  ])
-  .process(mycss)
-  .css;
+      mixins(),
+      cssvariables(),
+      nested()
+    ])
+    .process(mycss)
+    .css;
   console.log(output)
-  await fs.writeAsync('.tmp/test.css', output);
+  await fs.writeAsync(dest, output);
 }
 
 if (require.main === module) {

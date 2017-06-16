@@ -38,6 +38,10 @@
     "node-sass": "^4.5.0",
     "nunjucks": "^3.0.0",
     "pify": "^3.0.0",
+    "postcss-css-variables": "^0.7.0",
+    "postcss-mixins": "^6.0.0",
+    "postcss-nested": "^2.0.2",
+    "postcss-nesting": "^4.0.1",
     "speakingurl": "^13.0.0",
     "write-json-file": "^2.0.0"
   },

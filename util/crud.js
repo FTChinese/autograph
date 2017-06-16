@@ -13,6 +13,10 @@ exports.saveSvgConfig = async function(json) {
   return await writeJsonFile(uri.svgConfig, json);
 }
 
+exports.getSvgConfig = async function() {
+  return await loadJsonFile(uri.svgConfig);
+}
+
 exports.saveSvgStats = async function(json) {
   return await writeJsonFile(uri.svgStats, json);
 };

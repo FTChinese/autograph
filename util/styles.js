@@ -5,9 +5,8 @@ const nested = require('postcss-nested');
 const cssvariables = require('postcss-css-variables');
 const cssnext = require('postcss-cssnext');
 
-async function styles(input, output) {
+async function styles(input) {
   const src = path.resolve(process.cwd(), input);
-  const dest = path.resolve(process.cwd(), output);
   const mycss = await fs.readAsync(src);
   console.log(`Processing ${src}...`);
 
@@ -17,12 +16,19 @@ async function styles(input, output) {
     ])
     .process(mycss)
     .css;
-  console.log(`Geerated ${dest}`);
-  await fs.writeAsync(dest, result);
+
+  
+  console.log(`Generated ${dest}`);
+  await 
+
+  return result;
 }
 
 if (require.main === module) {
-  styles('client/chart.css', 'public/styles/chart.css')
+  styles('client/chart.css')
+    .then(result => {
+      return fs.writeAsync('public/styles/chart.css', result);
+    })
     .catch(err => {
       console.log(err);
     });

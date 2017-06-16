@@ -5,7 +5,7 @@ const styles = require('../util/styles.js');
 const uri = require('../util/uri.js');
 
 async function renderCharts(nightingale, svgStats) {
-  const css = await styles().then(result => result.replace(/\n/g, ''));
+  const css = await styles(uri.chartStyles);
 
 // Draw svg and save it
   const fileStats = await Promise.all(nightingale.map(async function(svg) {

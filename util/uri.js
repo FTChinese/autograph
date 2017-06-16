@@ -18,4 +18,4 @@ exports.svgConfig = `${publicDir}/config/${path.basename(nightingale)}`;
 exports.csvStats = `${storage}/data/csv-stats.json`;
 exports.svgStats = `${storage}/data/svg-stats.json`;
 exports.glossary = path.resolve(__dirname, `translate/en-cn.json`);
-exports.chartScss = path.resolve(__dirname, '../client/chart-styles.scss');
+exports.chartStyle = path.resolve(__dirname, '../client/chart.css');

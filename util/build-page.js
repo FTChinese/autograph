@@ -1,28 +1,32 @@
 const moment = require('moment-timezone');
 const render = require('./render.js');
-const styles = require('./styles.js');
 const buildArtifacts = require('./build-artifacts.js');
+const minify = require('html-minifier');
 
 // returns the html string to be used by Koa.
-async function buildPage() {
-  try {
-    const [csvs, charts] = await Promise.all([
-      buildArtifacts.getCsvStats(),
-		  buildArtifacts.getSvgStats()
-    ]);
+async function buildPage(env) {
+  const [csvs, charts] = await Promise.all([
+    buildArtifacts.getCsvStats(),
+    buildArtifacts.getSvgStats()
+  ]);
 
-    const context = {
-      publicUrl: encodeURIComponent(process.env.PUBLIC_URL),
-      csvs: csvs.map(isToday),
-      charts: charts.map(isToday)
-    }
-
-    const html = await render('index.html', context);
-
-    return html;
-  } catch (e) {
-    console.log(e);
+  const context = {
+    publicUrl: encodeURIComponent(process.env.PUBLIC_URL),
+    csvs: csvs.map(isToday),
+    charts: charts.map(isToday),
+    env
   }
+
+  const html = await render('index.html', context);
+
+  return minify(html, {
+    collapseBooleanAttributes: true,
+    collapseInlineTagWhitespace: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true,
+    removeComments: true,
+    minifyCSS: true
+  });
 }
 
 function isToday(o) {

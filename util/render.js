@@ -4,7 +4,7 @@ var env = new nunjucks.Environment(
   new nunjucks.FileSystemLoader(
     [
     	'views',
-    	'bower_components/ftc-footer/'
+			'public'
     ], 
     {
     	noCache: true,

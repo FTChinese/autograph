@@ -1,5 +1,2 @@
-module.exports = {
-    fetchCsv: require('./csv'),
-    fetchJson: require('./json'),
-    extractStats: require('./html')
-};
+exports.crawlConfig = require('./crawl-config.js');
+exports.crawlStats = require('./crawl-html.js');

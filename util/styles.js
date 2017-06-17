@@ -3,7 +3,6 @@ const path = require('path');
 const postcss = require('postcss');
 const nested = require('postcss-nested');
 const cssvariables = require('postcss-css-variables');
-const cssnext = require('postcss-cssnext');
 
 async function styles(input) {
   const src = path.resolve(process.cwd(), input);
@@ -16,10 +15,6 @@ async function styles(input) {
     ])
     .process(mycss)
     .css;
-
-  
-  console.log(`Generated ${dest}`);
-  await 
 
   return result;
 }

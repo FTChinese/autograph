@@ -7,6 +7,9 @@ const extract = require('./extract.js');
 /**
  * 
  * @param {String} url - http://ig.ft.com/autograph/
+ * @return {Promise<Object>}
+ * @property {Object[]} csv
+ * @property {Object[]} svg
  */
 async function fetch(url=uri.autograph) {
 

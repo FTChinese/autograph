@@ -30,5 +30,5 @@ server.on('listening', () => {
 });
 // Logging server error.
 server.on('error', (error) => {
-  debug('Server error');
+  debug(error);
 });

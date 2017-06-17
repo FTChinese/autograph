@@ -5,40 +5,31 @@ const styles = require('../util/styles.js');
 const uri = require('../util/uri.js');
 
 async function renderCharts(nightingale, svgStats) {
-  const css = await styles(uri.chartStyles);
+  const css = await styles(uri.chartStyle);
 
 // Draw svg and save it
-  const fileStats = await Promise.all(nightingale.map(async function(svg) {
-    const result = await draw(svg, css)
-    return await crud.saveSvg(svg.title, result);
+  const fileStats = new Map();
+  
+  await Promise.all(nightingale.map(async function(svg) {
+    const svgStr = draw(svg, css);
+    const {filename, size} = await crud.saveSvg(svg.title, svgStr);
+    fileStats.set(filename, size);
+    return Promise.resolve();
   }));
 
-  const stats = fileStats.reduce((o, file) => {
-    return o[file.filename] = file.size;
-  }, {});
+  const missing = [];
 
-  svgStats.forEach(svg => {
+  for (let svg of svgStats) {
     const key = svg.name;
-    const size = stats.hasOwnProperty(key) ? stats[key] : null
+    const size = fileStats.get(key);
+    if (!size) {
+      missing.push(key);
+    }
     Object.assign(svg, {size});
-  });
+  }
 
   await crud.saveSvgStats(svgStats);
-
-  const groups = svgStats.reduce((o, svg) => {
-    if (svg.size) {
-      o.exists.push(svg);
-    } else {
-      o.missing.push(svg);
-    }
-  }, {exists: [], missing: []})
-}
-
-if (require.main == module) {
-  renderCharts()
-    .catch(err => {
-      console.error(err);
-    });
+  return missing;
 }
 
 module.exports = renderCharts;

@@ -21,6 +21,10 @@ exports.saveSvgStats = async function(json) {
   return await writeJsonFile(uri.svgStats, json);
 };
 
+exports.getSvgStats = async function() {
+  return await loadJsonFile(uri.svgStats);
+}
+
 exports.saveCsvStats = async function(json) {
   return await writeJsonFile(uri.csvStats, json);
 };

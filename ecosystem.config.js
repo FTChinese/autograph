@@ -1,6 +1,5 @@
 const path = require('path');
 const interpreter = path.resolve(process.env.HOME, 'n/n/versions/node/8.1.0/bin/node');
-const publicUrl = 'http://ig.ftchinese.com/autograph';
 
 module.exports = {
   /**
@@ -16,8 +15,7 @@ module.exports = {
       interpreter: interpreter,
       env: {
         NODE_ENV: "development",
-        PORT: 4000,
-        PUBLIC_URL: publicUrl
+        PORT: 4000
       },
       env_production : {
         NODE_ENV: "production",

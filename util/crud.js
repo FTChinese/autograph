@@ -49,8 +49,9 @@ exports.getCsvStats = async function() {
  */
 exports.saveSvg = async function(name, svg) {
   const filename = `${slug(name)}.svg`;
-  debug(`Saving ${filename}`);
-  await fs.writeAsync(`${uri.graphicsDir}/${filename}`, svg);
+  const dest = `${uri.graphicsDir}/${filename}`;
+  debug(`Saving ${dest}`);
+  await fs.writeAsync(dest, svg);
   return {filename, size: filesize(Buffer.byteLength(svg), {round: 0})};
 };
 

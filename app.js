@@ -14,9 +14,12 @@ const env = {
 
 app.proxy = true;
 app.use(logger());
-app.use(serve(uri.publicDir, {
-	index: false
-}));
+
+if (process.env.NODE_ENV !== 'production') {
+	app.use(serve(uri.publicDir, {
+		index: false
+	}));
+}
 
 app.use(handleErrors);
 

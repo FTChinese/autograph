@@ -39,7 +39,6 @@ router.get('/', async function (ctx, next) {
     minifyCSS: true
   });
 
-  console.log(html);
   ctx.body = html;
   return;
 });

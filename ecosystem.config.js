@@ -27,7 +27,7 @@ module.exports = {
     // Second application
     {
       name      : "autograph-crawler",
-      script    : "cron-job.js",
+      script    : "index.js",
       interpreter: interpreter,
       env: {
         NODE_ENV: "development",

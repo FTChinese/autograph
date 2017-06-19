@@ -28,15 +28,14 @@ module.exports = {
     {
       name      : "autograph-crawler",
       script    : "cron-job.js",
-      log_date_format: "YYYY-MM-DD HH:mm Z",
       interpreter: interpreter,
       env: {
         NODE_ENV: "development",
-        PUBLIC_URL: publicUrl
       },
       env_production: {
         NODE_ENV: "production",
-        PUBLIC_DIR: '/opt/nodestatic/autograph'
+        PUBLIC_DIR: '/opt/nodestatic/autograph',
+        DEBUG: 'ag*'
       }
     }
   ],

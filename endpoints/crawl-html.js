@@ -20,16 +20,11 @@ async function fetch(url=uri.autograph) {
       return res.body;
     });
 
-  await crud.saveHomePage(html);
-
   const stats = extract(html);
   debug(`Total CSVs: ${stats.csv.length}`);
   debug(`Total SVGs: ${stats.svg.length}`);
-
-  await Promise.all([
-    crud.saveCsvStats(stats.csv),
-    crud.saveSvgStats(stats.svg)
-  ]);
+// Only save csvStats. svgStats is not complete yet.
+  await crud.saveCsvStats(stats.csv)
   return stats;
 }
 

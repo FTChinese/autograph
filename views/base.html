@@ -29,15 +29,10 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="{{env.static}}/favicons/apple-touch-icon-76x76.png">
 	<link href="{{env.static}}/favicons/favicon.ico" type="image/x-icon" rel="shortcut icon" />
 
-	{% if env.isProduction %}
 	<style>{% include "styles/main.css" %}</style>
-	{% else %}
-	<link inline rel="stylesheet" href="styles/main.css">
-	{% endif %}
 	<title>Economic Data Autograph</title>
 </head>
 <body>
 {% block body %}{% endblock %}
-
 </body>
 </html>

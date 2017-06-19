@@ -10,25 +10,38 @@ async function renderCharts(nightingale, svgStats) {
 // Draw svg and save it
   const fileStats = new Map();
   
+  // loop over each element in nightinggale-config.json to draw each svg
+  // `savSvg`
+  // Must use map here, not forEach
   await Promise.all(nightingale.map(async function(svg) {
     const svgStr = draw(svg, css);
+
     const {filename, size} = await crud.saveSvg(svg.title, svgStr);
+
     fileStats.set(filename, size);
     return Promise.resolve();
   }));
 
   const missing = [];
 
-  for (let svg of svgStats) {
-    const key = svg.name;
-    const size = fileStats.get(key);
-    if (!size) {
-      missing.push(key);
+  const stats = svgStats.map(svg => {
+    const key = svg.name
+    const size = fileStats.get(key) || null;
+    return Object.assign(svg, {size});
+  })
+  .filter(svg => {
+    if (svg.size) {
+      return true
+    } else {
+      missing.push(svg.name);
+      return false;
     }
-    Object.assign(svg, {size});
-  }
+  });
 
-  await crud.saveSvgStats(svgStats);
+  debug(`Missing svg: %O`, missing);
+
+  await crud.saveSvgStats(stats);
+
   return missing;
 }
 

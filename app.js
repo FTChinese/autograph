@@ -1,35 +1,32 @@
 const debug = require('debug')('ag:server');
-const serve = require('koa-static');
 const Koa = require('koa');
 const app = new Koa();
+const Router = require('koa-router');
+const router = new Router();
 const logger = require('koa-logger');
-const buildPage = require('./util/build-page.js');
 const uri = require('./util/uri.js');
+const home = require('./server/home.js');
 const handleErrors = require('./server/handle-errors.js');
 
-const env = {
-  isProduction: app.env === 'production',
-	static: 'http://interactive.ftchinese.com/'
-};
+const port = process.env.PORT || 4000;
 
 app.proxy = true;
 app.use(logger());
 
 if (process.env.NODE_ENV !== 'production') {
-	app.use(serve(uri.publicDir, {
-		index: false
-	}));
+  const serve = require('koa-static');
+  app.use(serve(uri.publicDir));
 }
 
 app.use(handleErrors);
 
-app.use(async (ctx) => {
-	ctx.body = await buildPage(env);
-});
+router.use('/', home.routes());
 
-const server = app.listen(process.env.PORT || 4000)
+app.use(router.routes());
+
+const server = app.listen(port);
 server.on('listening', () => {
-	console.log(`Client listening on port ${process.env.PORT || 4000}`);
+	debug(`Client listening on port ${port}`);
 });
 // Logging server error.
 server.on('error', (error) => {

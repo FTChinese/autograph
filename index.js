@@ -1,32 +1,34 @@
 const debug = require('debug')('ag:index');
-const endpoints = require('./endpoints');
-const chartsRender = require('./charts');
-const crud = require('./util/crud.js');
-const buildPage = require('./util/build-page.js');
 const moment = require('moment-timezone');
+const endpoints = require('./endpoints');
+const renderCharts = require('./charts');
+const crud = require('./util/crud.js');
 
 async function autoGraph() {
   debug(`Starting autograph at: ${moment.utc().format()}`)
   try {
 
     const [config, stats] = await Promise.all([
-      endpoints.crawlConfig,
-      endpoints.crawlStats
+      endpoints.crawlConfig(),
+      endpoints.crawlStats()
     ]);
 
-    const missing = await chartsRender(config, stats.svg);
-    debug(`Missing svg: ${missing}`);
+    debug(`Nightingale config has ${config.length} items`);
+
+    const missing = await renderCharts(config, stats.svg);
 
   } catch (e) {
     debug(e);
   }
-  debug(`Finished autograph at: ${moment.utc().format()}`);
 }
 
 if (require.main === module) {
   const later = require('later');
 
-  autoGraph();
+  autoGraph()
+    .catch(err => {
+      console.log(err);
+    });
 
   // Execute on evry day 2 hours between 0-8 UTC time.
   // const sched = later.parse.recur().on(0).hour();

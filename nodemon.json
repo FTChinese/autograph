@@ -5,7 +5,7 @@
     "client/**"
   ],
   "env": {
-    "PUBLIC_URL": "http://localhost:4000/autograph",
+    "NODE_ENV": "development",
     "PORT": 4000,
     "DEBUG": "ag*"
   },

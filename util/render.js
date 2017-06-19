@@ -4,7 +4,7 @@ var env = new nunjucks.Environment(
   new nunjucks.FileSystemLoader(
     [
     	'views',
-			'public'
+			'build'
     ], 
     {
     	noCache: true,

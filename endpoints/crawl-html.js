@@ -3,8 +3,15 @@ const got = require('got');
 const cheerio = require('cheerio');
 const fs = require('fs-jetpack');
 const path = require('path');
+const writeJsonFile = require('write-json-file');
 const uri = require('../util/uri.js');
 
+/**
+ * @example
+ * const crawleHTML = await CrawleHTML.init();
+ * crawlHTML.csvStats
+ * crawlHTML.svgStats
+ */
 class CrawlHTML {
   constructor(url = uri.autograph) {
     this.url = url;
@@ -38,8 +45,15 @@ class CrawlHTML {
     this.$ = cheerio.load(this.html);
   }
 /**
- * @param {Object} $ - cheerio object
- * @return {Object[]} - [{"name": "", "size": "", "lastModified": ""}]
+ * @type {Object[]}
+ * @example 
+ * [
+ *  {
+ *    "name": "us-10yr-bond.csv",
+ *    "size": "51kb", 
+ *    "lastModified": "Tue, 17 Oct 2017 13:06:29 GMT"
+ *  }
+ * ]
  */
   get csvStats() {
     const rowEls = this.$('table.datasets').find('tr');
@@ -58,9 +72,12 @@ class CrawlHTML {
     }).get();
   }
 /**
- * 
- * @param {Object} $ - cheerio object
- * @return {Object[]} - [{"name": "", "lastModified": ""}, ...]
+ * @type {Object[]}
+ * @example 
+ * [{
+ *  "name": "dollar-vs-euro.svg", 
+ *  "lastModified": "Tue, 17 Oct 2017 13:07:22 GMT"
+ * }]
  */
   get svgStats() {
     const chartEls = this.$('div.charts').find('div.chart');
@@ -79,25 +96,35 @@ class CrawlHTML {
     }).get();
   }
 
+  async saveCsvStats() {
+    debug(`Saving ${uri.csvStats}`);
+    return await writeJsonFile(uri.csvStats, this.csvStats);
+  }
+
+  async saveSvgStats() {
+    debug(`Saving ${uri.svgStats}`);
+    return await writeJsonFile(uri.svgStats, this.svgStats);
+  }
 /**
- * @return {Object} - {csv: [], svg: []}
+ * @return {Promise<CrawleHTML>}
  */
-  async start() {
-    await this.fetch();
-    this.parse();
-    return {
-      csvStats: this.csvStats,
-      svgStats: this.svgStats
-    }
+  static async init() {
+    const crawler = new CrawlHTML()
+    await crawler.fetch();
+    crawler.parse();
+    await Promise.all([
+      crawler.saveCsvStats(),
+      crawler.saveSvgStats()
+    ]);
+    return crawler;
   }
 }
 
 if (require.main == module) {
-  const crawler = new CrawlHTML();
-  crawler.start()
-    .then(data => {
-      console.log(`CSV: ${data.csvStats.length}`);
-      console.log(`SVG: ${data.svgStats.length}`);
+  CrawlHTML.init()
+    .then(crawler => {
+      console.log(`CSV: ${crawler.csvStats.length}`);
+      console.log(`SVG: ${crawler.svgStats.length}`);
     })
     .catch(err => {
       console.log(err);

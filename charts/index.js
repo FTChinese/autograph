@@ -1,73 +1,103 @@
 const debug = require('debug')('ag:charts');
-const crud = require('../util/crud.js');
+const writeJsonFile = require('write-json-file');
+const fs = require('fs-jetpack');
+const slug = require('speakingurl');
+const filesize = require('filesize');
 const draw = require('./draw.js');
+const CrawlConfig = require('../endpoints/crawl-config');
+const CrawlHTML = require('../endpoints/crawl-html');
 const styles = require('../util/styles.js');
 const uri = require('../util/uri.js');
 
 /**
- * Render svg with nightingale data. Fill in the `size` field in each entry of svgStats
- * @param {*} nightingale 
- * @param {*} svgStats 
+ * @desc 
  */
-
 class Charts {
   constructor(styleFile=uri.chartStyle) {
     this.styleFile = styleFile;
     this.svgSizes = new Map();
+    this.stats = [];
+    this.missed = [];
   }
 
-  render(data) {
+  async render(data) {
     const css = await styles(this.styleFile);
 
     await Promise.all(data.map(async (svg) => {
       const svgStr = draw(svg, css);
-      const {filename, size} = await crud.saveSvg(svg.title, svgStr);
+      const {filename, size} = await this.saveSvg(svg.title, svgStr);
       this.svgSizes.set(filename, size);
       return;
     }));
+    debug(`Rendered ${this.svgSizes.size} charts.`);
+  }
+
+  gatherStats(svgStats) {
+    svgStats.forEach(svg => {
+      const svgName = svg.name;
+      if (this.svgSizes.has(svgName)) {
+        const size = this.svgSizes.get(svgName);
+        this.stats.push(Object.assign({}, svg, {size}));
+      } else {
+        this.missed.push(svg);
+      }
+    });
+    debug(`Lost charts: ${this.missed.length}`);
+  }
+/**
+ * @param {String} name - White space separated string.
+ * @param {String} svg - The svg string.
+ * @return {Object}
+ * @property {String} filename
+ * @property {Number} size
+ * @example
+ * {
+ *  "filename": "business-investment.svg",
+ *  "size": 10
+ * }
+ */
+  async saveSvg(name, svg) {
+    const filename = `${slug(name)}.svg`;
+    const dest = `${uri.graphicsDir}/${filename}`;
+    await fs.writeAsync(dest, svg);
+    return {filename, size: filesize(Buffer.byteLength(svg), {round: 0})};
+  };
+
+  async saveStats() {
+    debug(`Saving ${uri.chartStats}`);
+    return await writeJsonFile(uri.chartStats, this.stats);
+  }
+
+  async saveMissed() {
+    debug(`Saving ${uri.lostCharts}`);
+    return await writeJsonFile(uri.lostCharts, this.missed);
+  }
+
+  static async init() {
+    const charts = new Charts();
+
+    const [configCrawler, htmlCrawler] = await Promise.all([
+      CrawlConfig.init(),
+      CrawlHTML.init()
+    ]);
+
+    await charts.render(configCrawler.data);
+    charts.gatherStats(htmlCrawler.svgStats);
+
+    await Promise.all([
+      charts.saveStats(),
+      charts.saveMissed()
+    ]);
+
+    return charts;
   }
 }
-async function renderCharts(nightingale, svgStats) {
-  const css = await styles(uri.chartStyle);
 
-  // `fileStats` stores the size of each generated svg file.
-  const fileStats = new Map();
-  
-  // loop over each element in nightinggale-config.json to draw each svg
-  // `savSvg`
-  // Must use map here, not forEach
-  await Promise.all(nightingale.map(async function(svg) {
-    const svgStr = draw(svg, css);
-
-    const {filename, size} = await crud.saveSvg(svg.title, svgStr);
-
-    fileStats.set(filename, size);
-    return Promise.resolve();
-  }));
-
-  const missing = [];
-
-  // Merge the actual filesize into svgStats
-  const stats = svgStats.map(svg => {
-    const key = svg.name
-    const size = fileStats.get(key) || null;
-    return Object.assign(svg, {size});
-  })
-  // If any of the element of the array does not have `size`, then this file is no generated.
-  .filter(svg => {
-    if (svg.size) {
-      return true
-    } else {
-      missing.push(svg.name);
-      return false;
-    }
-  });
-
-  debug(`Missing svg: %O`, missing);
-
-  await crud.saveSvgStats(stats);
-
-  return missing;
+if (require.main == module) {
+  Charts.init()
+    .catch(err => {
+      console.log(err);
+    });
 }
 
-module.exports = renderCharts;
+module.exports = Charts;

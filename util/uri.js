@@ -19,5 +19,7 @@ exports.svgConfig = `${buildDir}/config/${path.basename(nightingale)}`;
 // `public` directory in the current repo
 exports.csvStats = `${publicDir}/data/csv-stats.json`;
 exports.svgStats = `${publicDir}/data/svg-stats.json`;
+exports.chartStats = `${publicDir}/data/chart-stats.json`;
+exports.lostCharts = `${publicDir}/data/lost-charts.json`;
 exports.glossary = path.resolve(__dirname, `translate/en-cn.json`);
 exports.chartStyle = path.resolve(__dirname, '../client/chart.css');

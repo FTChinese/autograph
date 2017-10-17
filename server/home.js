@@ -15,7 +15,6 @@ const env = {
 };
 
 router.get('/', async function (ctx, next) {
-  debug(`requesting homepage`);
   const [csvs, charts] = await Promise.all([
     crud.getCsvStats(),
     crud.getSvgStats()

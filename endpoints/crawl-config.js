@@ -1,36 +1,46 @@
 const debug = require('debug')('ag:crawl-config');
 const got = require('got');
+const writeJsonFile = require('write-json-file');
 const uri = require('../util/uri.js');
-const crud = require('../util/crud.js');
 
-// The returned data will be used to :
-// 1. Draw charts
-// 2. Extract glossary
-async function fetch(url=uri.nightingale) {
+/**
+ * @class
+ */
+class CrawlConfig {
+  constructor(url=uri.nightingale) {
+    this.url = url;
+  }
 
-  debug(`Fetching: ${url}`);
+  async fetch() {
+    debug(`Fetching: ${this.url}`);
+    const start = new Date();
+    this.data = await got(this.url, {
+        json: true
+      })
+      .then(res => {
+        return res.body;
+      });
+    const end = new Date();
 
-  const start = new Date();
-  const nightingale = await got(url, {
-      json: true
-    })
-    .then(res => {
-      return res.body;
-    });
+    debug(`Length of nightingale-config.json: ${this.data.length}`);
+    debug(`Time used ${(end - start)/1000}s`);
+    return this.data;
+  }
 
-  const end = new Date()
-  debug(`Length of nightingale-config.json: ${nightingale.length}`);
-  debug(`Time used ${(end - start)/1000}s`);
-
-  await crud.saveSvgConfig(nightingale);
-  return nightingale;
+  async save() {
+    if (!this.data) {
+      await this.fetch();
+    }
+    return await writeJsonFile(uri.svgConfig, this.data);
+  }
 }
 
 if (require.main == module) {
-  fetch()
+  const crawlConfig = new CrawlConfig();
+  crawlConfig.save()
     .catch(err => {
       console.log(err);
     });
 }
 
-module.exports = fetch;
+module.exports = CrawlConfig;

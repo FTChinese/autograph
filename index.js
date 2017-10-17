@@ -1,13 +1,16 @@
+/*
+ * Crawl data from http://ig.ft.com/autograph every two hours
+ * Use the crawled data to drow svg 
+ */
 const debug = require('debug')('ag:index');
 const moment = require('moment-timezone');
 const endpoints = require('./endpoints');
 const renderCharts = require('./charts');
-const crud = require('./util/crud.js');
 
 async function autoGraph() {
   debug(`Starting autograph at: ${moment.utc().format()}`)
   try {
-
+// Crawl the SVG rending data, and file info of csv and svg.
     const [config, stats] = await Promise.all([
       endpoints.crawlConfig(),
       endpoints.crawlStats()

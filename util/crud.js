@@ -6,14 +6,14 @@ const slug = require('speakingurl');
 const filesize = require('filesize');
 const uri = require('./uri.js');
 
-exports.saveHomePage = async function(html) {
-  return await fs.writeAsync(`${uri.buildDir}/index.html`, html);
-};
+// exports.saveHomePage = async function(html) {
+//   return await fs.writeAsync(`${uri.buildDir}/index.html`, html);
+// };
 
-exports.saveSvgConfig = async function(json) {
-  debug(`Saving ${uri.svgConfig}`);
-  return await writeJsonFile(uri.svgConfig, json);
-}
+// exports.saveSvgConfig = async function(json) {
+//   debug(`Saving ${uri.svgConfig}`);
+//   return await writeJsonFile(uri.svgConfig, json);
+// }
 
 exports.getSvgConfig = async function() {
   debug(`Getting ${uri.svgConfig}`);

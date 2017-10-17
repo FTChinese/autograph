@@ -1,5 +1,5 @@
 const path = require('path');
-const interpreter = path.resolve(process.env.HOME, 'n/n/versions/node/8.1.0/bin/node');
+const interpreter = path.resolve(process.env.HOME, 'n/n/versions/node/8.7.0/bin/node');
 
 module.exports = {
   /**
@@ -21,7 +21,10 @@ module.exports = {
         NODE_ENV: "production",
         PUBLIC_DIR: '/opt/nodestatic/autograph',
         DEBUG: 'ag*'
-      }
+      },
+      max_restart: 10,
+      error_file: path.resolve(process.env.HOME, 'logs/autograph-server-err.log'),
+      out_file: path.resolve(process.env.HOME, 'logs/autograph-server-out.log')
     },
 
     // Second application
@@ -36,22 +39,9 @@ module.exports = {
         NODE_ENV: "production",
         PUBLIC_DIR: '/opt/nodestatic/autograph',
         DEBUG: 'ag*'
-      }
+      },
+      error_file: path.resolve(process.env.HOME, 'logs/autograph-crawler-err.log'),
+      out_file: path.resolve(process.env.HOME, 'logs/autograph-crawler-out.log')
     }
-  ],
-
-  /**
-   * Deployment section
-   * http://pm2.keymetrics.io/docs/usage/deployment/
-   */
-  deploy : {
-    production : {
-      user : "node",
-      host : "localhost",
-      ref  : "origin/master",
-      repo : "git@github.com:FTChinese/autograph.git",
-      path : "/var/www/production",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
-    }
-  }
+  ]
 }

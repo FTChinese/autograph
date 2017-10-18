@@ -19,7 +19,7 @@ module.exports = {
       },
       env_production : {
         NODE_ENV: "production",
-        PUBLIC_DIR: '/opt/nodestatic/autograph',
+        CHART_DIR: '/opt/nodestatic/autograph',
         DEBUG: 'ag*'
       },
       max_restart: 10,
@@ -28,6 +28,7 @@ module.exports = {
     },
 
     // Second application
+    // Crawler should always write log in truncate mode rather than append
     {
       name      : "autograph-crawler",
       script    : "index.js",
@@ -37,7 +38,7 @@ module.exports = {
       },
       env_production: {
         NODE_ENV: "production",
-        PUBLIC_DIR: '/opt/nodestatic/autograph',
+        CHART_DIR: '/opt/nodestatic/autograph',
         DEBUG: 'ag*'
       },
       error_file: path.resolve(process.env.HOME, 'logs/autograph-crawler-err.log'),

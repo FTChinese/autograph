@@ -1,8 +1,10 @@
 const path = require('path');
-// `buildDir` is used to save nightingale-config.json and rendered svg files.
-const buildDir = exports.publicDir = path.resolve(process.cwd(), process.env.PUBLIC_DIR || 'build');
 // `publicDir` is used to save styles, and data used to render HTML.
-const publicDir = exports.buildDir = path.resolve(process.cwd(), 'public');
+const publicDir = exports.publicDir = path.resolve(__dirname, '../public');
+// `chartDir` is used to save nightingale-config.json and rendered svg files.
+// For development it is the same as publicDir.
+const chartDir = exports.chartDir = process.env.CHART_DIR || publicDir;
+
 /**
  * http://ig.ft.com/autograph the home page
  * http://ig.ft.com/autograph/data/<file.csv> the csv dir
@@ -13,8 +15,8 @@ const nightingale = exports.nightingale = `${autograph}/config/nightingale-confi
 
 
 // `public` in the current repo for dev, or specified in env var on server.
-exports.graphicsDir = `${buildDir}/graphics`;
-exports.svgConfig = `${buildDir}/config/${path.basename(nightingale)}`;
+exports.graphicsDir = `${chartDir}/graphics`;
+exports.svgConfig = `${chartDir}/config/${path.basename(nightingale)}`;
 
 // `public` directory in the current repo
 exports.csvStats = `${publicDir}/data/csv-stats.json`;

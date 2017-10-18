@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postversion": "git push && git push --tags",
-    "clean": "rm -rf public/* build/*",
+    "clean": "rm -rf public/*",
     "glossary": "node ./translate/glossary.js",
     "build": "postcss ./client/*.css --use postcss-nested postcss-css-variables --no-map -d ./public/styles",
-    "start": "DEBUG=ag* node index.js && npm run build && nodemon app.js"
+    "charts": "DEBUG=ag* node ./charts",
+    "start": "npm run build && nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "load-json-file": "^3.0.0",
     "lodash": "^4.17.4",
     "mocha": "^4.0.1",
+    "moment": "^2.19.1",
     "moment-timezone": "^0.5.11",
     "nunjucks": "^3.0.0",
     "pify": "^3.0.0",

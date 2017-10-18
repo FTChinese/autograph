@@ -6,23 +6,36 @@ const router = new Router();
 const logger = require('koa-logger');
 const uri = require('./util/uri.js');
 const home = require('./server/home.js');
+const stats = require('./server/stats');
 const handleErrors = require('./server/handle-errors.js');
 const inlineAndMinify = require('./server/inline-min.js');
 
+const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 4000;
 
 app.proxy = true;
 app.use(logger());
 
+debug(`Build dir: ${uri.chartDir}`);
+debug(`Public dir: ${uri.publicDir}`);
+
 if (process.env.NODE_ENV !== 'production') {
-  const serve = require('koa-static');
-  app.use(serve(uri.publicDir));
+  app.use(require('koa-static')(uri.publicDir));
 }
 
 app.use(handleErrors);
+app.use(async function (ctx, next) {
+  ctx.state.env = {
+    isProduction,
+    iconPrefix: 'http://interactive.ftchinese.com/',
+    chartPrefix: isProduction ? 'http://ig.ftchinese.com/autograph' : ''
+  }
+  await next();
+});
 app.use(inlineAndMinify);
 
 router.use('/', home.routes());
+router.use('/__stats', stats.routes());
 
 app.use(router.routes());
 

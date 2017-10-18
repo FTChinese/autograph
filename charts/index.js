@@ -3,6 +3,7 @@ const writeJsonFile = require('write-json-file');
 const fs = require('fs-jetpack');
 const slug = require('speakingurl');
 const filesize = require('filesize');
+const moment = require('moment');
 const draw = require('./draw.js');
 const CrawlConfig = require('../endpoints/crawl-config');
 const CrawlHTML = require('../endpoints/crawl-html');
@@ -67,10 +68,13 @@ class Charts {
     debug(`Saving ${uri.chartStats}`);
     return await writeJsonFile(uri.chartStats, this.stats);
   }
-
+/**
+ * Save an object {lastUpdated: "", lostCharts: []}
+ */
   async saveMissed() {
     debug(`Saving ${uri.lostCharts}`);
-    return await writeJsonFile(uri.lostCharts, this.missed);
+    const now = moment.utc().utcOffset(8).format();
+    return await writeJsonFile(uri.lostCharts, {lastUpdated: now, lostCharts: this.missed});
   }
 
   static async init() {

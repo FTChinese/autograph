@@ -1,18 +1,9 @@
 const debug = require('debug')('apn:home');
 const Router = require('koa-router');
 const router = new Router();
-const moment = require('moment-timezone');
-const minify = require('html-minifier').minify;
+const moment = require('moment');
 const render = require('../util/render.js');
 const store = require('../util/store.js');
-const uri = require('../util/uri.js');
-const isProduction = process.env.NODE_ENV === 'production';
-
-const env = {
-  isProduction,
-	static: 'http://interactive.ftchinese.com/',
-  urlPrefix: isProduction ? 'http://ig.ftchinese.com/autograph' : ''
-};
 
 router.get('/', async function (ctx, next) {
   const [csvs, charts] = await Promise.all([
@@ -20,12 +11,10 @@ router.get('/', async function (ctx, next) {
     store.getChartStats()
   ]);
 
-  ctx.state = {
-    publicUrl: uri.publicDir,
+  Object.assign(ctx.state, {
     csvs: csvs.map(isToday),
-    charts: charts.map(isToday),
-    env
-  }
+    charts: charts.map(isToday)
+  })
 
   ctx.body = await render('home.html', ctx.state);
 
@@ -35,9 +24,9 @@ router.get('/', async function (ctx, next) {
 function isToday(o) {
   const timeZone = 'Asia/Shanghai';
   // Create a UTC time and explicitly convert to Beijing time.
-  const today = moment.utc().tz(timeZone);
+  const today = moment.utc().utcOffset(8);
   // Convert modification time to Beijing time.
-  const modifiedTime = moment.utc(new Date(o.lastModified)).tz(timeZone);
+  const modifiedTime = moment.utc(new Date(o.lastModified)).utcOffset(8);
 
   return Object.assign({}, o, {
     isToday: modifiedTime.isSame(today, 'day'),

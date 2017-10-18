@@ -25,14 +25,14 @@
 <div class="charts">
     {% for chart in charts %}
     <div class="chart">
-        <object data="{{env.urlPrefix}}/graphics/{{chart.name}}" type="image/svg+xml"></object>
+        <object data="{{env.chartPrefix}}/graphics/{{chart.name}}" type="image/svg+xml"></object>
         <p>
             <small>{{chart.lastModified}}</small>
             {% if chart.isToday %}<span class="label today">Today</span>{% endif %}
         </p>
         <p>
-            <a href="{{env.urlPrefix}}/graphics/{{chart.name}}" download>svg ({{chart.size}})</a> |
-            <a href="https://www.ft.com/__origami/service/image/v2/images/raw/{{env.urlPrefix}}/graphics/{{chart.name}}?width=400&format=png&source=ftchinese" download>png</a>
+            <a href="{{env.chartPrefix}}/graphics/{{chart.name}}" download>svg ({{chart.size}})</a> |
+            <a href="https://www.ft.com/__origami/service/image/v2/images/raw/{{env.chartPrefix}}/graphics/{{chart.name}}?width=400&format=png&source=ftchinese" download>png</a>
         </p>
     </div>
 

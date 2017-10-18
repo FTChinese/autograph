@@ -8,8 +8,7 @@
     "postversion": "git push && git push --tags",
     "clean": "rm -rf public/* build/*",
     "glossary": "node ./translate/glossary.js",
-    "watch": "postcss ./client/main.css --use postcss-nested postcss-css-variables --no-map -o ./build/styles/main.css -w",
-    "build": "postcss ./client/*.css --use postcss-nested postcss-css-variables --no-map -d ./build/styles",
+    "build": "postcss ./client/*.css --use postcss-nested postcss-css-variables --no-map -d ./public/styles",
     "start": "DEBUG=ag* node index.js && npm run build && nodemon app.js"
   },
   "repository": {
@@ -31,6 +30,7 @@
     "fs-jetpack": "^1.2.0",
     "got": "^7.1.0",
     "html-minifier": "^3.5.5",
+    "inline-source": "^5.2.4",
     "jsdom": "^11.3.0",
     "koa": "^2.3.0",
     "koa-logger": "^3.1.0",

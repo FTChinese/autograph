@@ -4,7 +4,7 @@ const router = new Router();
 const moment = require('moment-timezone');
 const minify = require('html-minifier').minify;
 const render = require('../util/render.js');
-const crud = require('../util/crud.js');
+const store = require('../util/store.js');
 const uri = require('../util/uri.js');
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -16,8 +16,8 @@ const env = {
 
 router.get('/', async function (ctx, next) {
   const [csvs, charts] = await Promise.all([
-    crud.getCsvStats(),
-    crud.getSvgStats()
+    store.getCsvStats(),
+    store.getChartStats()
   ]);
 
   ctx.state = {
@@ -27,19 +27,9 @@ router.get('/', async function (ctx, next) {
     env
   }
 
-  let html = await render('home.html', ctx.state);
+  ctx.body = await render('home.html', ctx.state);
 
-  html = minify(html, {
-    collapseBooleanAttributes: true,
-    collapseInlineTagWhitespace: true,
-    collapseWhitespace: true,
-    conservativeCollapse: true,
-    removeComments: true,
-    minifyCSS: true
-  });
-
-  ctx.body = html;
-  return;
+  return await next();
 });
 
 function isToday(o) {

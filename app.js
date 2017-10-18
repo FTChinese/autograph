@@ -7,6 +7,7 @@ const logger = require('koa-logger');
 const uri = require('./util/uri.js');
 const home = require('./server/home.js');
 const handleErrors = require('./server/handle-errors.js');
+const inlineAndMinify = require('./server/inline-min.js');
 
 const port = process.env.PORT || 4000;
 
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use(handleErrors);
+app.use(inlineAndMinify);
 
 router.use('/', home.routes());
 

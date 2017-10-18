@@ -1,4 +1,4 @@
-const debug = require('debug')('ag:crud');
+const debug = require('debug')('ag:store');
 const loadJsonFile = require('load-json-file');
 const writeJsonFile = require('write-json-file');
 const uri = require('./uri.js');
